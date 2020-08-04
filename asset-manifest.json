@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/quotes-application/static/css/main.02a96b8e.chunk.css",
+    "main.js": "/quotes-application/static/js/main.69ded2b8.chunk.js",
+    "main.js.map": "/quotes-application/static/js/main.69ded2b8.chunk.js.map",
+    "runtime-main.js": "/quotes-application/static/js/runtime-main.fd0b10d4.js",
+    "runtime-main.js.map": "/quotes-application/static/js/runtime-main.fd0b10d4.js.map",
+    "static/js/2.f9f1dccc.chunk.js": "/quotes-application/static/js/2.f9f1dccc.chunk.js",
+    "static/js/2.f9f1dccc.chunk.js.map": "/quotes-application/static/js/2.f9f1dccc.chunk.js.map",
+    "index.html": "/quotes-application/index.html",
+    "precache-manifest.b02569bf01fe29bbde83d113616261c6.js": "/quotes-application/precache-manifest.b02569bf01fe29bbde83d113616261c6.js",
+    "service-worker.js": "/quotes-application/service-worker.js",
+    "static/css/main.02a96b8e.chunk.css.map": "/quotes-application/static/css/main.02a96b8e.chunk.css.map",
+    "static/js/2.f9f1dccc.chunk.js.LICENSE.txt": "/quotes-application/static/js/2.f9f1dccc.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/quotes-application/static/media/achieve-sunset.adf3cf35.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fd0b10d4.js",
+    "static/js/2.f9f1dccc.chunk.js",
+    "static/css/main.02a96b8e.chunk.css",
+    "static/js/main.69ded2b8.chunk.js"
+  ]
+}
