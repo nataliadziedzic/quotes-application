@@ -63,6 +63,17 @@
         height: 30px;
         margin: 4vh auto 0;
     }
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover, 
+    textarea:-webkit-autofill:focus,
+    textarea:-internal-autofill-selected,
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    input:-internal-autofill-selected {
+        -webkit-text-fill-color: white;
+        transition: background-color 5000s ease-in-out 0s;
+    }
     input, textarea, &__informations__info {
         @media (min-width: 720px) and (orientation: portrait){
             font-size: 20px;
