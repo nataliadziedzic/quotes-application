@@ -1,0 +1,8 @@
+@mixin pagesPosition {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+left: 0%;
+right: 0%;
+text-shadow: 1px 1px black;
+}

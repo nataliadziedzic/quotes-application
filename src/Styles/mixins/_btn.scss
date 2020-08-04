@@ -1,0 +1,22 @@
+@mixin btn {
+    margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        border: 1px solid rgb(255, 255, 255);
+        background-color: transparent;
+        font-size: 16px;
+        cursor: pointer;
+        transition: .2s;
+            @media (min-width: 720px) and (orientation: portrait){
+                width: 200px;
+                height: 51px;
+                font-size: 20px;
+                border: 1.5px solid rgb(255,255,255);
+            }
+        @media (min-width: 1024px) and (orientation: landscape){
+            font-size: 20px;
+            border: 1.5px solid rgb(255,255,255)
+        }
+        &:hover{
+        background-color: rgb(0, 0, 0)
+}}

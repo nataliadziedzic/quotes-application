@@ -1,0 +1,486 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  text-align: center;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+html {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  height: 10vh;
+}
+
+.header__menu {
+  width: 20vw;
+  max-width: 200px;
+  height: 95vh;
+}
+
+.header__menu--hidden {
+  opacity: 0;
+}
+
+main {
+  height: 95vh;
+  background-image: url(../../img/achieve-sunset.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+main .opacity {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  height: 5vh;
+}
+
+.header {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: transparent;
+}
+
+.header__logo {
+  font-family: 'PT Serif', serif;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.header__hamburger {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.header__menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: rgba(7, 8, 10, 0.5);
+  background-color: #000;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.header__menu__menuList {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.header__menu__menuList__item {
+  padding-top: 50px;
+}
+
+.home {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0%;
+  right: 0%;
+  text-shadow: 1px 1px black;
+  height: 300px;
+  z-index: 1;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 20px;
+}
+
+.home__title {
+  font-size: 30px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+}
+
+.home__start {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.home__start:hover {
+  background-color: black;
+}
+
+.home__next {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.home__next:hover {
+  background-color: black;
+}
+
+.start {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0%;
+  right: 0%;
+  text-shadow: 1px 1px black;
+  font-size: 26px;
+  text-align: center;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.start__welcome {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.start__question {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.start__btnContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.start__btnContainer__choice {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.start__btnContainer__choice:hover {
+  background-color: black;
+}
+
+.motivationBox {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.motivationBox__textBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: black;
+  border: 5px solid saddlebrown;
+  -webkit-box-shadow: 0 0 10px chocolate;
+          box-shadow: 0 0 10px chocolate;
+  min-height: 50%;
+  min-width: 50%;
+}
+
+.motivationBox__textBox__author, .motivationBox__textBox__quote {
+  font-family: 'Philosopher', sans-serif;
+  font-size: 24px;
+  color: white;
+  margin: 40px 20px;
+}
+
+.motivationBox__textBox__author {
+  text-align: right;
+  margin-right: 50px;
+  font-size: 20px;
+}
+
+.motivationBox__textBox__btnContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.motivationBox__textBox__btnContainer__btn {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  background-color: #a05017;
+}
+
+.motivationBox__textBox__btnContainer__btn:hover {
+  background-color: black;
+}
+
+.motivationBox__textBox__btnContainer__btn:hover {
+  background-color: #864212;
+}
+
+.loginBox {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0%;
+  right: 0%;
+  text-shadow: 1px 1px black;
+}
+
+.loginBox__description {
+  font-size: 30px;
+}
+
+.loginBox__inputs {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.loginBox__inputs input {
+  margin: 10px;
+  text-align: left;
+  padding-left: 5px;
+  width: 180px;
+  font-size: 15px;
+  line-height: 25px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+}
+
+.loginBox__btnContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loginBox__btnContainer__login {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  height: 30px;
+}
+
+.loginBox__btnContainer__login:hover {
+  background-color: black;
+}
+
+.loginBox__btnContainer__register {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  height: 30px;
+}
+
+.loginBox__btnContainer__register:hover {
+  background-color: black;
+}
+
+.loginBox__errorBox {
+  opacity: 0;
+  min-height: 105px;
+  margin-top: 5px;
+}
+
+.loginBox__errorBox__errMessage {
+  display: block;
+  color: red;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.loginBox__errorBox--show {
+  opacity: 1;
+}
+
+.registerBox {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 0%;
+  right: 0%;
+  text-shadow: 1px 1px black;
+}
+
+.registerBox__description {
+  font-size: 30px;
+}
+
+.registerBox__inputs {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.registerBox__inputs input {
+  margin: 10px;
+  text-align: left;
+  padding-left: 5px;
+  width: 180px;
+  font-size: 15px;
+  line-height: 25px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+}
+
+.registerBox__btnContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.registerBox__btnContainer__login {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  height: 30px;
+}
+
+.registerBox__btnContainer__login:hover {
+  background-color: black;
+}
+
+.registerBox__btnContainer__register {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  height: 30px;
+}
+
+.registerBox__btnContainer__register:hover {
+  background-color: black;
+}
+
+.registerBox__errorBox {
+  opacity: 0;
+  min-height: 105px;
+  margin-top: 5px;
+}
+
+.registerBox__errorBox__errMessage {
+  display: block;
+  color: red;
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.registerBox__errorBox--show {
+  opacity: 1;
+}
+
+.footer {
+  background-color: black;
+  border-top: 1px solid white;
+}
+
+.footer p {
+  color: white;
+  font-size: 10px;
+  line-height: 20px;
+}
+/*# sourceMappingURL=main.css.map */
