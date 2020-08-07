@@ -10,7 +10,7 @@ function ToughTask() {
         "Do a regular squat than take a large step forward with your left foot and lower down toward the ground allowing both legs to bend to approximately 90 degrees. Return to start. Compete 15 reps on each side",
         "Place your feet shoulder-width apart, bend your knees and jump side to side landing into a squat. Compete 14 reps ",
         "Lie down on one side, resting most of weight on it. With legs in the air at a 45-degree angle put your arms on the ground for support. Bend your knees as you bring them toward your chest, and lift your chest to meet them. Lower back to start. Repeat 15 times on each side",
-        "Lie down with legs legs raised slightly off the ground and then lift your legs as high as you can; at the same time, bring your chin as close to your chest as possible and clap your hands behind your legs. ",
+        "Lie down with legs raised slightly off the ground and then lift your legs as high as you can; at the same time, bring your chin as close to your chest as possible and clap your hands behind your legs.  Repeat 15 times.",
         "Lie on your back with your arms straight out to the sides. Lift your legs and slightly touch the ground with your feets on one side, come back to the center and go to the other side. Compete 10 reps on each side",
         "Sit on your sit bones as you lift your feet from the floor. With your legs bended at 90 degree straighten your spine at a 45-degree angle from the floor, use your abdominals to twist to the right, then back to center, and then to the left. Compete 15 reps on each side",
         "Lie on your back, bend your knees so that your feet are flat on the floor, arms by sides. Move your shoulder blades and head slightly off the ground and reach your right hand to your right foot, return to start and quickly repeat on the opposite side. Compete 15 reps on each side.",
@@ -33,7 +33,7 @@ function ToughTask() {
                     <p className="motivationBox__textBox__description"> - {quotes[quoteIndex].author} </p>
                 </div>
                 <div className="motivationBox__textBox__btnContainer">
-                    <Link to="/start"><button className="motivationBox__textBox__btnContainer__btn">Change</button></Link>
+                    <Link to="/quotes-application/start"><button className="motivationBox__textBox__btnContainer__btn">Change</button></Link>
                     <button onClick={showTask} className="motivationBox__textBox__btnContainer__btn">Get task</button>
                 </div>
             </div>

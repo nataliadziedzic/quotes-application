@@ -28,7 +28,7 @@ function EasyTask() {
                     <p className="motivationBox__textBox__description"> - {quotes[quoteIndex].author} </p>
                 </div>
                 <div className="motivationBox__textBox__btnContainer">
-                    <Link to="/start"><button className="motivationBox__textBox__btnContainer__btn">Change</button></Link>
+                    <Link to="/quotes-application/start"><button className="motivationBox__textBox__btnContainer__btn">Change</button></Link>
                     <button onClick={showTask} className="motivationBox__textBox__btnContainer__btn author">Get task</button>
                 </div>
             </div>

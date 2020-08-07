@@ -22,10 +22,10 @@ function Header() {
             <button className="header__hamburger" onClick={handleShowMenu}><i className={ikon}></i></button>
             <nav className='header__menu header__menu--hidden'>
                 <ul className="header__menu__menuList">
-                    <li className='header__menu__menuList__item'><NavLink to='/' exact >Home</NavLink></li>
-                    <li className='header__menu__menuList__item'><NavLink to='/start' >Start</NavLink></li>
-                    <li className='header__menu__menuList__item'><NavLink to='/login' >Login</NavLink></li>
-                    <li className='header__menu__menuList__item'><NavLink to='/contact' >Contact</NavLink></li>
+                    <li className='header__menu__menuList__item'><NavLink to='/quotes-application/' exact >Home</NavLink></li>
+                    <li className='header__menu__menuList__item'><NavLink to='/quotes-application/start' >Start</NavLink></li>
+                    <li className='header__menu__menuList__item'><NavLink to='/quotes-application/login' >Login</NavLink></li>
+                    <li className='header__menu__menuList__item'><NavLink to='/quotes-application/contact' >Contact</NavLink></li>
                 </ul>
             </nav>
         </>

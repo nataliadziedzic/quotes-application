@@ -1,11 +1,7 @@
 import React from 'react';
-// import { Copyright} from 'react-copyright'
 function Footer() {
-
-
     return (
-        <p>Fooer</p>
-        // <Copyright>Jason Bellamy</Copyright>
+        <p>© 2020 Natalia Dziedzic</p>
     );
 }
 

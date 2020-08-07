@@ -37,9 +37,9 @@
             background-color: transparent;
             border: none;
             border-bottom: 1.5px solid rgb(255, 255, 255);
+            outline: none;
             @media (min-width: 720px){
                 border-bottom: 2px solid rgb(255, 255, 255);
-
             }
         }
         input:-webkit-autofill,

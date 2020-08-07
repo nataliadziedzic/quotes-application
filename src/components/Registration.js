@@ -27,7 +27,7 @@ function Regiatration(props) {
         passInput.length < 6 ? setIsPassCorrect(false) : setIsPassCorrect(true)
     }
     const handleValidation = () => {
-        if (isUserCorrect && isPassCorrect & isEmailCorrect) {
+        if (isUserCorrect && isPassCorrect && isEmailCorrect) {
             setIsAllCorrect(true)
             props.loginData.user = username
             props.loginData.password = pass
@@ -57,8 +57,8 @@ function Regiatration(props) {
                 <input type="password" name='password' value={pass} onChange={handleSetPass} />
             </div>
             <div className="registerBox__btnContainer">
-                <Link to={isAllCorrect ? '/start' : '/registration'}> <button onClick={handleValidation} className="loginBox__btnContainer__register">Sign up</button></Link>
-                <Link to='/login'><button className="registerBox__btnContainer__register"> Back to login</button></Link>
+                <Link to={isAllCorrect ? '/quotes-application/start' : '/quotes-application/registration'}> <button onClick={handleValidation} className="loginBox__btnContainer__register">Sign up</button></Link>
+                <Link to='/quotes-application/login'><button className="registerBox__btnContainer__register"> Back to login</button></Link>
             </div>
             <div className="registerBox__errorBox">
                 {!isUserCorrect && <span className='registerBox__errorBox__errMessage'>{errors.usernameErr}</span>}
