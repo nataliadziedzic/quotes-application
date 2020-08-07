@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/quotes-application/static/css/main.79bc8c95.chunk.css",
-    "main.js": "/quotes-application/static/js/main.69ded2b8.chunk.js",
-    "main.js.map": "/quotes-application/static/js/main.69ded2b8.chunk.js.map",
+    "main.css": "/quotes-application/static/css/main.3a71672d.chunk.css",
+    "main.js": "/quotes-application/static/js/main.086a73fe.chunk.js",
+    "main.js.map": "/quotes-application/static/js/main.086a73fe.chunk.js.map",
     "runtime-main.js": "/quotes-application/static/js/runtime-main.fd0b10d4.js",
     "runtime-main.js.map": "/quotes-application/static/js/runtime-main.fd0b10d4.js.map",
     "static/js/2.f9f1dccc.chunk.js": "/quotes-application/static/js/2.f9f1dccc.chunk.js",
     "static/js/2.f9f1dccc.chunk.js.map": "/quotes-application/static/js/2.f9f1dccc.chunk.js.map",
     "index.html": "/quotes-application/index.html",
-    "precache-manifest.02c86cbd12445c5bb78bc05c34582ca9.js": "/quotes-application/precache-manifest.02c86cbd12445c5bb78bc05c34582ca9.js",
+    "precache-manifest.84f9f1a7cba120c350550d5652b3df99.js": "/quotes-application/precache-manifest.84f9f1a7cba120c350550d5652b3df99.js",
     "service-worker.js": "/quotes-application/service-worker.js",
-    "static/css/main.79bc8c95.chunk.css.map": "/quotes-application/static/css/main.79bc8c95.chunk.css.map",
+    "static/css/main.3a71672d.chunk.css.map": "/quotes-application/static/css/main.3a71672d.chunk.css.map",
     "static/js/2.f9f1dccc.chunk.js.LICENSE.txt": "/quotes-application/static/js/2.f9f1dccc.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/quotes-application/static/media/achieve-sunset.adf3cf35.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.fd0b10d4.js",
     "static/js/2.f9f1dccc.chunk.js",
-    "static/css/main.79bc8c95.chunk.css",
-    "static/js/main.69ded2b8.chunk.js"
+    "static/css/main.3a71672d.chunk.css",
+    "static/js/main.086a73fe.chunk.js"
   ]
 }
