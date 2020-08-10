@@ -42,17 +42,17 @@ function Login(props) {
             <h2 className='loginBox__description'>You must login to see more</h2>
             <div className="loginBox__inputs">
                 <label htmlFor="username">Username:</label>
-                <input type="text" name='username' value={username} onChange={handleSetUsername} /><br />
+                <input className="loginBox__input" type="text" name='username' value={username} onChange={handleSetUsername} /><br />
                 <label htmlFor="password">Password:</label>
-                <input type="password" name='password' value={pass} onChange={handleSetPass} />
+                <input className="loginBox__input" type="password" name='password' value={pass} onChange={handleSetPass} />
             </div>
             <div className="loginBox__btnContainer">
-                <Link to={props.permission ? '/quotes-application/start' : '/quotes-application/login'}><button onClick={handleValidation} className="loginBox__btnContainer__login">Log in</button></Link>
-                <Link to='/quotes-application/registration'><button className="loginBox__btnContainer__login">Not regitered yet?</button></Link>
+                <Link to={props.permission ? '/quotes-application/start' : '/quotes-application/login'}><button onClick={handleValidation} className="loginBox__login">Log in</button></Link>
+                <Link to='/quotes-application/registration'><button className="loginBox__login">Not regitered yet?</button></Link>
             </div>
             <div className="loginBox__errorBox">
-                {!isUserCorrect && <span className='loginBox__errorBox__errMessage'>{errors.usernameErr}</span>}
-                {!isPassCorrect && <span className='loginBox__errorBox__errMessage'>{errors.passErr}</span>}
+                {!isUserCorrect && <span className='loginBox__errMessage'>{errors.usernameErr}</span>}
+                {!isPassCorrect && <span className='loginBox__errMessage'>{errors.passErr}</span>}
             </div>
         </div>
     );

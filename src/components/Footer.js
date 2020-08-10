@@ -1,7 +1,7 @@
 import React from 'react';
 function Footer() {
     return (
-        <p>© 2020 Natalia Dziedzic</p>
+        <p className="footer__txt">© 2020 Natalia Dziedzic</p>
     );
 }
 

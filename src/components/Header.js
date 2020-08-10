@@ -21,11 +21,11 @@ function Header() {
             <h1 className='header__logo'>My motivation</h1>
             <button className="header__hamburger" onClick={handleShowMenu}><i className={ikon}></i></button>
             <nav className='header__menu header__menu--hidden'>
-                <ul className="header__menu__menuList">
-                    <li className='header__menu__menuList__item'><NavLink to='/quotes-application/' exact >Home</NavLink></li>
-                    <li className='header__menu__menuList__item'><NavLink to='/quotes-application/start' >Start</NavLink></li>
-                    <li className='header__menu__menuList__item'><NavLink to='/quotes-application/login' >Login</NavLink></li>
-                    <li className='header__menu__menuList__item'><NavLink to='/quotes-application/contact' >Contact</NavLink></li>
+                <ul className="header__menuList">
+                    <li className='header__item'><NavLink to='/quotes-application/' exact >Home</NavLink></li>
+                    <li className='header__item'><NavLink to='/quotes-application/start' >Start</NavLink></li>
+                    <li className='header__item'><NavLink to='/quotes-application/login' >Login</NavLink></li>
+                    <li className='header__item'><NavLink to='/quotes-application/contact' >Contact</NavLink></li>
                 </ul>
             </nav>
         </>

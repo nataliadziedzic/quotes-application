@@ -49,21 +49,21 @@ function Regiatration(props) {
         <div className="registerBox">
             <h2 className='registerBox__description'>Sign up</h2>
             <div className="registerBox__inputs">
-                <label htmlFor="username">Username:</label>
-                <input type="text" name='username' value={username} onChange={handleSetUsername} /><br />
-                <label htmlFor="email" id="email">E-mail:</label>
-                <input type="text" name='email' value={email} onChange={handleSetEmail} /><br />
-                <label htmlFor="password">Password:</label>
-                <input type="password" name='password' value={pass} onChange={handleSetPass} />
+                <label className="registerBox__label" htmlFor="username">Username:</label>
+                <input className="registerBox__input" type="text" name='username' value={username} onChange={handleSetUsername} /><br />
+                <label className="registerBox__label" htmlFor="email" id="email">E-mail:</label>
+                <input className="registerBox__input" type="text" name='email' value={email} onChange={handleSetEmail} /><br />
+                <label className="registerBox__label" htmlFor="password">Password:</label>
+                <input className="registerBox__input" type="password" name='password' value={pass} onChange={handleSetPass} />
             </div>
             <div className="registerBox__btnContainer">
-                <Link to={isAllCorrect ? '/quotes-application/start' : '/quotes-application/registration'}> <button onClick={handleValidation} className="loginBox__btnContainer__register">Sign up</button></Link>
-                <Link to='/quotes-application/login'><button className="registerBox__btnContainer__register"> Back to login</button></Link>
+                <Link to={isAllCorrect ? '/quotes-application/start' : '/quotes-application/registration'}> <button onClick={handleValidation} className="loginBox__register">Sign up</button></Link>
+                <Link to='/quotes-application/login'><button className="registerBox__register"> Back to login</button></Link>
             </div>
             <div className="registerBox__errorBox">
-                {!isUserCorrect && <span className='registerBox__errorBox__errMessage'>{errors.usernameErr}</span>}
-                {!isPassCorrect && <span className='registerBox__errorBox__errMessage'>{errors.passErr}</span>}
-                {!isEmailCorrect && <span className='registerBox__errorBox__errMessage'>{errors.emailErr}</span>}
+                {!isUserCorrect && <span className='registerBox__errMessage'>{errors.usernameErr}</span>}
+                {!isPassCorrect && <span className='registerBox__errMessage'>{errors.passErr}</span>}
+                {!isEmailCorrect && <span className='registerBox__errMessage'>{errors.emailErr}</span>}
             </div>
         </div>
     );

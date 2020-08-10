@@ -55,32 +55,32 @@
         @media (orientation: landscape){
           width: 12vw;
         }
-      &__menuList{
-         text-align: center;
-         margin-top: 40px;
-         @media (min-width: 720px) and (orientation: portrait) {
-           margin-top: 75px;
-           font-size: 22px;
-         }
-         @media (min-width: 1024px) and (orientation: landscape){
-          margin-top: 80px;
-        }
-        &__item{
-          margin-top: 50px;
-          @media (min-width: 540px) and (orientation: landscape){
-            font-size: 15px;
-            margin-top: 30px;
-          }
-          @media (min-width: 700px) and (orientation: landscape){
-            font-size: 17px;
-            margin-top: 35px;
-          }
-          @media (min-width: 1024px) and (orientation: landscape){
-            font-size: 22px;
-            margin-top: 50px;
-          }
-        }
-      }
     }
+    &__menuList{
+      text-align: center;
+      margin-top: 40px;
+      @media (min-width: 720px) and (orientation: portrait) {
+        margin-top: 75px;
+        font-size: 22px;
+      }
+      @media (min-width: 1024px) and (orientation: landscape){
+       margin-top: 80px;
+     }
+   }
+   &__item{
+    margin-top: 50px;
+    @media (min-width: 540px) and (orientation: landscape){
+      font-size: 15px;
+      margin-top: 30px;
+    }
+    @media (min-width: 700px) and (orientation: landscape){
+      font-size: 17px;
+      margin-top: 35px;
+    }
+    @media (min-width: 1024px) and (orientation: landscape){
+      font-size: 22px;
+      margin-top: 50px;
+    }
+  }
   }
   

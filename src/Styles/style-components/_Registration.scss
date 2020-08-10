@@ -33,7 +33,7 @@
             font-size: 22px;
         }
      }
-     input{
+     &__input{
          margin-top: 0;
          @media (min-width: 720px) and (orientation: portrait){
             width: 250px;
@@ -47,7 +47,7 @@
             font-size: 17px;
         }
      }
-     label {
+     &__label {
         @media (min-width: 720px) and (orientation: portrait){
             margin-top: 20px; 
         }

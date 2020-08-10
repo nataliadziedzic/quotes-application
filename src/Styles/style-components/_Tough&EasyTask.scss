@@ -15,17 +15,19 @@
             width: 60%;
             min-height: 70vh;
         }
-      &__description, &__main {
-         font-family: 'Philosopher', sans-serif;
-         font-weight: lighter;
-         margin: 10% 5% 2%;
-         @media (orientation: landscape) {
-            margin-top: 5%;
-        }
-        @media (min-width: 1024px) and (orientation: landscape) {
-            margin-top: 10%;
-        }
+    }
+    &__description, &__main {
+        font-family: 'Philosopher', sans-serif;
+        font-weight: lighter;
+        margin: 10% 5% 2%;
+        @media (orientation: landscape) {
+           margin-top: 5%;
+       }
+       @media (min-width: 1024px) and (orientation: landscape) {
+           margin-top: 10%;
+       }
 }
+
       &__main {
          font-size: 19px;
          @media (min-width: 720px) and (orientation: portrait) {
@@ -67,20 +69,19 @@
         bottom: 10%;
         width: 100%;
         justify-content: space-around;
-        &__btn {
-          @include btn;
-          width: 120px;
-          height: 30px;
-          background-color: rgb(160, 80, 23);
-          &:hover{
-            background-color: rgb(134, 66, 18);
-        }
-        @media (min-width: 1024px) and (orientation: landscape) {
-            width: 160px;
-            height: 45px;
-        }
-    }
+}
+&__btn {
+    @include btn;
+    width: 120px;
+    height: 30px;
+    background-color: rgb(160, 80, 23);
+    &:hover{
+      background-color: rgb(134, 66, 18);
+  }
+  @media (min-width: 1024px) and (orientation: landscape) {
+      width: 160px;
+      height: 45px;
+  }
 }
     }
     
-}

@@ -3,22 +3,21 @@
         opacity: 0;
         min-height: 105px;
         margin-top: 10px;
-        &__errMessage{
-         display: block;
-        color: rgb(255, 0, 0);
-        font-size: 12px;
-        background-color: rgba(0,0,0, .5);
-        padding: 5px;
-        margin-top: 10px;
-        @media (min-width: 720px) and (orientation: portrait){
-            font-size: 16px;
-        }
-        @media (min-width: 1240px) and (orientation: landscape){
-            font-size: 16px;
-        }
-        }
-        
     }
+    &__errMessage{
+        display: block;
+       color: rgb(255, 0, 0);
+       font-size: 12px;
+       background-color: rgba(0,0,0, .5);
+       padding: 5px;
+       margin-top: 10px;
+       @media (min-width: 720px) and (orientation: portrait){
+           font-size: 16px;
+       }
+       @media (min-width: 1240px) and (orientation: landscape){
+           font-size: 14px;
+       }
+       }
     &__errorBox--show{
         opacity: 1;
     }

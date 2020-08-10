@@ -20,21 +20,21 @@ function ToughTask() {
     const taskIndex = Math.floor(Math.random() * tasksNames.length)
 
     const showTask = () => {
-        document.querySelector('.motivationBox__textBox__main').innerHTML = tasksNames[taskIndex]
-        document.querySelector('.motivationBox__textBox__description').innerHTML = tasksInstructions[taskIndex]
-        document.querySelector('.motivationBox__textBox__description').style.textAlign = 'center'
+        document.querySelector('.motivationBox__main').innerHTML = tasksNames[taskIndex]
+        document.querySelector('.motivationBox__description').innerHTML = tasksInstructions[taskIndex]
+        document.querySelector('.motivationBox__description').style.textAlign = 'center'
     }
 
     return (
         <div className="motivationBox">
             <div className="motivationBox__textBox">
-                <h2 className="motivationBox__textBox__main"> {quotes[quoteIndex].quote} </h2>
-                <div className="motivationBox__textBox__descriptionWrapper">
-                    <p className="motivationBox__textBox__description"> - {quotes[quoteIndex].author} </p>
+                <h2 className="motivationBox__main"> {quotes[quoteIndex].quote} </h2>
+                <div className="motivationBox__descriptionWrapper">
+                    <p className="motivationBox__description"> - {quotes[quoteIndex].author} </p>
                 </div>
-                <div className="motivationBox__textBox__btnContainer">
-                    <Link to="/quotes-application/start"><button className="motivationBox__textBox__btnContainer__btn">Change</button></Link>
-                    <button onClick={showTask} className="motivationBox__textBox__btnContainer__btn">Get task</button>
+                <div className="motivationBox__btnContainer">
+                    <Link to="/quotes-application/start"><button className="motivationBox__btn">Change</button></Link>
+                    <button onClick={showTask} className="motivationBox__btn">Get task</button>
                 </div>
             </div>
         </div>
