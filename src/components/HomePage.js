@@ -23,7 +23,7 @@ function HomePage(props) {
             <h1 className="home__title">Fight for yourself!</h1>
             <p className='home__intro' > {text} </p>
             {page !== 3 ? <button className="home__next" onClick={handleNext}>Next</button> : undefined}
-            {page === 3 ? <Link to={props.permission ? '/quotes-application/start' : '/quotes-application/login'}><button className="home__start">Start</button></Link> : undefined}
+            {page === 3 ? <Link to={props.permission ? '/start' : '/login'}><button className="home__start">Start</button></Link> : undefined}
         </div>
     );
 }

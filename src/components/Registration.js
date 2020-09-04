@@ -57,8 +57,8 @@ function Regiatration(props) {
                 <input className="registerBox__input" type="password" name='password' value={pass} onChange={handleSetPass} />
             </div>
             <div className="registerBox__btnContainer">
-                <Link to={isAllCorrect ? '/quotes-application/start' : '/quotes-application/registration'}> <button onClick={handleValidation} className="loginBox__register">Sign up</button></Link>
-                <Link to='/quotes-application/login'><button className="registerBox__register"> Back to login</button></Link>
+                <Link to={isAllCorrect ? '/start' : '/registration'}> <button onClick={handleValidation} className="loginBox__register">Sign up</button></Link>
+                <Link to='/login'><button className="registerBox__register"> Back to login</button></Link>
             </div>
             <div className="registerBox__errorBox">
                 {!isUserCorrect && <span className='registerBox__errMessage'>{errors.usernameErr}</span>}

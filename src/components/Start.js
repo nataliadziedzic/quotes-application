@@ -7,11 +7,11 @@ function Start(props) {
                 <h1 className="start__welcome">Welcome!</h1>
                 <p className="start__question">How are you feeling today?</p>
                 <div className="start__btnContainer">
-                    <Link to='/quotes-application/tough'><button className="start__choice">I'm feeling great!</button></Link>
-                    <Link to='/quotes-application/easy'><button className="start__choice">I'm feeling low.</button></Link>
+                    <Link to='/tough'><button className="start__choice">I'm feeling great!</button></Link>
+                    <Link to='/easy'><button className="start__choice">I'm feeling low.</button></Link>
                 </div>
             </div>) : (
-                    <Redirect to='/quotes-application/login' />
+                    <Redirect to='/login' />
                 )
         )} />
     );

@@ -22,14 +22,18 @@ html {
   height: 10vh;
 }
 
+@media (min-width: 540px) and (orientation: landscape) {
+  .header {
+    height: 15vh;
+  }
+}
+
 .header__menu {
-  width: 20vw;
-  max-width: 200px;
   height: 95vh;
 }
 
 .header__menu--hidden {
-  opacity: 0;
+  margin-right: -100%;
 }
 
 main {
@@ -63,13 +67,27 @@ main .opacity {
 .header__logo {
   font-family: 'PT Serif', serif;
   font-size: 18px;
-  padding: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .header__logo {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .header__logo {
+    font-size: 22px;
+  }
 }
 
 .header__hamburger {
   position: absolute;
   right: 0;
-  margin-right: 10px;
+  margin-right: calc(10vw - 15px);
   z-index: 3;
   width: 30px;
   height: 30px;
@@ -78,24 +96,90 @@ main .opacity {
   cursor: pointer;
 }
 
+@media (orientation: landscape) {
+  .header__hamburger {
+    margin-right: calc(6vw - 15px);
+  }
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .header__hamburger {
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+    margin-right: calc(10vw - 23px);
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .header__hamburger {
+    margin-right: calc(6vw - 20px);
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
 .header__menu {
   position: fixed;
   top: 0;
   right: 0;
   z-index: 2;
   background-color: rgba(7, 8, 10, 0.5);
-  background-color: #000;
+  background-color: black;
   -webkit-transition: .4s;
   transition: .4s;
+  width: 20vw;
+  font-size: 16px;
 }
 
-.header__menu__menuList {
+@media (orientation: landscape) {
+  .header__menu {
+    width: 12vw;
+  }
+}
+
+.header__menuList {
   text-align: center;
   margin-top: 40px;
 }
 
-.header__menu__menuList__item {
-  padding-top: 50px;
+@media (min-width: 720px) and (orientation: portrait) {
+  .header__menuList {
+    margin-top: 75px;
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .header__menuList {
+    margin-top: 80px;
+  }
+}
+
+.header__item {
+  margin-top: 50px;
+}
+
+@media (min-width: 540px) and (orientation: landscape) {
+  .header__item {
+    font-size: 15px;
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 700px) and (orientation: landscape) {
+  .header__item {
+    font-size: 17px;
+    margin-top: 35px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .header__item {
+    font-size: 22px;
+    margin-top: 50px;
+  }
 }
 
 .home {
@@ -107,10 +191,16 @@ main .opacity {
   right: 0%;
   text-shadow: 1px 1px black;
   height: 300px;
-  z-index: 1;
   font-size: 16px;
   letter-spacing: 1px;
   padding: 20px;
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .home {
+    margin-bottom: 20px;
+    height: 400px;
+  }
 }
 
 .home__title {
@@ -119,7 +209,70 @@ main .opacity {
   margin-top: 40px;
 }
 
-.home__start {
+@media (min-width: 400px) and (orientation: portrait) {
+  .home__title {
+    font-size: 33px;
+  }
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .home__title {
+    font-size: 38px;
+    margin-top: 15px;
+    margin-bottom: 45px;
+  }
+}
+
+@media (min-width: 720px) and (orientation: landscape) {
+  .home__title {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .home__title {
+    font-size: 40px;
+  }
+}
+
+.home__intro {
+  margin-left: 10vw;
+  margin-right: 10vw;
+  font-weight: lighter;
+}
+
+@media (min-width: 400px) and (orientation: portrait) {
+  .home__intro {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .home__intro {
+    margin-top: 58px;
+    font-size: 27px;
+  }
+}
+
+@media (min-width: 720px) and (orientation: landscape) {
+  .home__intro {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .home__intro {
+    font-size: 21px;
+  }
+}
+
+@media (min-width: 1200px) and (orientation: landscape) {
+  .home__intro {
+    font-size: 22px;
+  }
+}
+
+.home__start, .home__next {
   margin-top: 20px;
   width: 150px;
   height: 40px;
@@ -136,29 +289,30 @@ main .opacity {
           transform: translateX(-50%);
 }
 
-.home__start:hover {
+@media (min-width: 720px) and (orientation: portrait) {
+  .home__start, .home__next {
+    width: 200px;
+    height: 51px;
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .home__start, .home__next {
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+.home__start:hover, .home__next:hover {
   background-color: black;
 }
 
-.home__next {
-  margin-top: 20px;
-  width: 150px;
-  height: 40px;
-  border: 1px solid white;
-  background-color: transparent;
-  font-size: 16px;
-  cursor: pointer;
-  -webkit-transition: .2s;
-  transition: .2s;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.home__next:hover {
-  background-color: black;
+@media (min-width: 540px) and (orientation: landscape) {
+  .home__start, .home__next {
+    bottom: 32px;
+  }
 }
 
 .start {
@@ -169,21 +323,51 @@ main .opacity {
   left: 0%;
   right: 0%;
   text-shadow: 1px 1px black;
-  font-size: 26px;
-  text-align: center;
   padding: 20px;
-  margin: 0 auto;
 }
 
 .start__welcome {
-  font-size: 34px;
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
+@media (min-width: 720px) and (orientation: portrait) {
+  .start__welcome {
+    font-size: 45px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+  .start__welcome {
+    font-size: 60px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .start__welcome {
+    font-size: 45px;
+  }
+}
+
 .start__question {
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 20px;
   font-size: 24px;
+}
+
+@media (min-width: 720px) and (orientation: portrait), (min-width: 1024px) and (orientation: landscape) {
+  .start__question {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+  .start__question {
+    font-size: 45px;
+  }
 }
 
 .start__btnContainer {
@@ -199,7 +383,7 @@ main .opacity {
           align-items: center;
 }
 
-.start__btnContainer__choice {
+.start__choice {
   margin-top: 20px;
   width: 150px;
   height: 40px;
@@ -211,8 +395,56 @@ main .opacity {
   transition: .2s;
 }
 
-.start__btnContainer__choice:hover {
+@media (min-width: 720px) and (orientation: portrait) {
+  .start__choice {
+    width: 200px;
+    height: 51px;
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .start__choice {
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+.start__choice:hover {
   background-color: black;
+}
+
+@media (min-width: 720px) and (orientation: landscape) {
+  .start__choice {
+    width: 160px;
+    height: 45px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .start__choice {
+    width: 210px;
+    height: 55px;
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .start__choice {
+    width: 240px;
+    height: 65px;
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+  .start__choice {
+    width: 310px;
+    height: 80px;
+    font-size: 33px;
+    margin-top: 40px;
+  }
 }
 
 .motivationBox {
@@ -227,27 +459,96 @@ main .opacity {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   background-color: black;
-  border: 5px solid saddlebrown;
-  -webkit-box-shadow: 0 0 10px chocolate;
-          box-shadow: 0 0 10px chocolate;
-  min-height: 50%;
-  min-width: 50%;
+  border: 4px solid saddlebrown;
+  min-height: 45vh;
+  width: 90%;
+  max-width: 700px;
 }
 
-.motivationBox__textBox__author, .motivationBox__textBox__quote {
+@media (orientation: landscape) {
+  .motivationBox__textBox {
+    width: 60%;
+    min-height: 70vh;
+  }
+}
+
+.motivationBox__description, .motivationBox__main {
   font-family: 'Philosopher', sans-serif;
-  font-size: 24px;
-  color: white;
-  margin: 40px 20px;
+  font-weight: lighter;
+  margin: 10% 5% 2%;
 }
 
-.motivationBox__textBox__author {
+@media (orientation: landscape) {
+  .motivationBox__description, .motivationBox__main {
+    margin-top: 5%;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .motivationBox__description, .motivationBox__main {
+    margin-top: 10%;
+  }
+}
+
+.motivationBox__main {
+  font-size: 19px;
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .motivationBox__main {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .motivationBox__main {
+    font-size: 27px;
+  }
+}
+
+.motivationBox__descriptionWrapper {
+  max-height: 110px;
+  overflow: auto;
+  margin: 5%;
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .motivationBox__descriptionWrapper {
+    max-height: 150px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .motivationBox__descriptionWrapper {
+    max-height: 250px;
+  }
+}
+
+@media (min-height: 800px) and (orientation: portrait) {
+  .motivationBox__descriptionWrapper {
+    max-height: 180px;
+  }
+}
+
+.motivationBox__description {
   text-align: right;
-  margin-right: 50px;
-  font-size: 20px;
+  margin-top: 15px;
+  font-size: 17px;
 }
 
-.motivationBox__textBox__btnContainer {
+@media (min-width: 720px) and (orientation: portrait) {
+  .motivationBox__description {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .motivationBox__description {
+    font-size: 24px;
+  }
+}
+
+.motivationBox__btnContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -258,7 +559,7 @@ main .opacity {
       justify-content: space-around;
 }
 
-.motivationBox__textBox__btnContainer__btn {
+.motivationBox__btn {
   margin-top: 20px;
   width: 150px;
   height: 40px;
@@ -268,18 +569,44 @@ main .opacity {
   cursor: pointer;
   -webkit-transition: .2s;
   transition: .2s;
+  width: 120px;
+  height: 30px;
   background-color: #a05017;
 }
 
-.motivationBox__textBox__btnContainer__btn:hover {
+@media (min-width: 720px) and (orientation: portrait) {
+  .motivationBox__btn {
+    width: 200px;
+    height: 51px;
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .motivationBox__btn {
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+.motivationBox__btn:hover {
   background-color: black;
 }
 
-.motivationBox__textBox__btnContainer__btn:hover {
+.motivationBox__btn:hover {
   background-color: #864212;
 }
 
+@media (min-width: 1024px) and (orientation: landscape) {
+  .motivationBox__btn {
+    width: 160px;
+    height: 45px;
+  }
+}
+
 .loginBox {
+  margin-top: 15vh;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -287,10 +614,63 @@ main .opacity {
   left: 0%;
   right: 0%;
   text-shadow: 1px 1px black;
+  padding: 20px;
+}
+
+@media (max-height: 570px) and (orientation: portrait) {
+  .loginBox {
+    margin-top: 40px;
+  }
+}
+
+@media (max-height: 320px) and (orientation: landscape) {
+  .loginBox {
+    margin-top: 60px;
+  }
+}
+
+.loginBox__errMessage {
+  height: 24px;
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+  .loginBox__errorBox--show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 20px;
+  }
 }
 
 .loginBox__description {
-  font-size: 30px;
+  font-size: 25px;
+}
+
+@media (min-width: 400px) and (orientation: portrait) {
+  .loginBox__description {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .loginBox__description {
+    font-size: 38px;
+  }
+}
+
+@media (max-height: 320px), (max-width: 320px) {
+  .loginBox__description {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .loginBox__description {
+    font-size: 32px;
+  }
 }
 
 .loginBox__inputs {
@@ -298,7 +678,29 @@ main .opacity {
   font-size: 20px;
 }
 
-.loginBox__inputs input {
+@media (min-width: 720px) and (orientation: portrait) {
+  .loginBox__inputs {
+    font-size: 28px;
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .loginBox__inputs {
+    font-size: 25px;
+  }
+}
+
+.loginBox__inputs input:-webkit-autofill,
+.loginBox__inputs input:-webkit-autofill:hover,
+.loginBox__inputs input:-webkit-autofill:focus,
+.loginBox__inputs input:-internal-autofill-selected {
+  -webkit-text-fill-color: white;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.loginBox__input {
   margin: 10px;
   text-align: left;
   padding-left: 5px;
@@ -307,7 +709,14 @@ main .opacity {
   line-height: 25px;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid white;
+  border-bottom: 1.5px solid white;
+  outline: none;
+}
+
+@media (min-width: 720px) {
+  .loginBox__input {
+    border-bottom: 2px solid white;
+  }
 }
 
 .loginBox__btnContainer {
@@ -323,7 +732,13 @@ main .opacity {
           align-items: center;
 }
 
-.loginBox__btnContainer__login {
+@media (min-width: 720px) and (orientation: portrait) {
+  .loginBox__btnContainer {
+    margin-top: 45px;
+  }
+}
+
+.loginBox__login, .loginBox__register {
   margin-top: 20px;
   width: 150px;
   height: 40px;
@@ -333,43 +748,64 @@ main .opacity {
   cursor: pointer;
   -webkit-transition: .2s;
   transition: .2s;
+  width: 130px;
   height: 30px;
+  font-size: 14px;
 }
 
-.loginBox__btnContainer__login:hover {
+@media (min-width: 720px) and (orientation: portrait) {
+  .loginBox__login, .loginBox__register {
+    width: 200px;
+    height: 51px;
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .loginBox__login, .loginBox__register {
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+.loginBox__login:hover, .loginBox__register:hover {
   background-color: black;
 }
 
-.loginBox__btnContainer__register {
-  margin-top: 20px;
-  width: 150px;
-  height: 40px;
-  border: 1px solid white;
-  background-color: transparent;
-  font-size: 16px;
-  cursor: pointer;
-  -webkit-transition: .2s;
-  transition: .2s;
-  height: 30px;
-}
-
-.loginBox__btnContainer__register:hover {
-  background-color: black;
+@media (min-width: 1024px) and (orientation: landscape) {
+  .loginBox__login, .loginBox__register {
+    width: 170px;
+    height: 40px;
+    font-size: 18px;
+  }
 }
 
 .loginBox__errorBox {
   opacity: 0;
   min-height: 105px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
-.loginBox__errorBox__errMessage {
+.loginBox__errMessage {
   display: block;
   color: red;
   font-size: 12px;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 5px;
   margin-top: 10px;
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .loginBox__errMessage {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1240px) and (orientation: landscape) {
+  .loginBox__errMessage {
+    font-size: 14px;
+  }
 }
 
 .loginBox__errorBox--show {
@@ -384,10 +820,35 @@ main .opacity {
   left: 0%;
   right: 0%;
   text-shadow: 1px 1px black;
+  padding: 20px;
 }
 
 .registerBox__description {
-  font-size: 30px;
+  font-size: 25px;
+}
+
+@media (min-width: 400px) and (orientation: portrait) {
+  .registerBox__description {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .registerBox__description {
+    font-size: 38px;
+  }
+}
+
+@media (max-height: 320px), (max-width: 320px) {
+  .registerBox__description {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .registerBox__description {
+    font-size: 32px;
+  }
 }
 
 .registerBox__inputs {
@@ -395,7 +856,29 @@ main .opacity {
   font-size: 20px;
 }
 
-.registerBox__inputs input {
+@media (min-width: 720px) and (orientation: portrait) {
+  .registerBox__inputs {
+    font-size: 28px;
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .registerBox__inputs {
+    font-size: 25px;
+  }
+}
+
+.registerBox__inputs input:-webkit-autofill,
+.registerBox__inputs input:-webkit-autofill:hover,
+.registerBox__inputs input:-webkit-autofill:focus,
+.registerBox__inputs input:-internal-autofill-selected {
+  -webkit-text-fill-color: white;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.registerBox__input {
   margin: 10px;
   text-align: left;
   padding-left: 5px;
@@ -404,7 +887,14 @@ main .opacity {
   line-height: 25px;
   background-color: transparent;
   border: none;
-  border-bottom: 2px solid white;
+  border-bottom: 1.5px solid white;
+  outline: none;
+}
+
+@media (min-width: 720px) {
+  .registerBox__input {
+    border-bottom: 2px solid white;
+  }
 }
 
 .registerBox__btnContainer {
@@ -420,7 +910,13 @@ main .opacity {
           align-items: center;
 }
 
-.registerBox__btnContainer__login {
+@media (min-width: 720px) and (orientation: portrait) {
+  .registerBox__btnContainer {
+    margin-top: 45px;
+  }
+}
+
+.registerBox__login, .registerBox__register {
   margin-top: 20px;
   width: 150px;
   height: 40px;
@@ -430,37 +926,46 @@ main .opacity {
   cursor: pointer;
   -webkit-transition: .2s;
   transition: .2s;
+  width: 130px;
   height: 30px;
+  font-size: 14px;
 }
 
-.registerBox__btnContainer__login:hover {
+@media (min-width: 720px) and (orientation: portrait) {
+  .registerBox__login, .registerBox__register {
+    width: 200px;
+    height: 51px;
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .registerBox__login, .registerBox__register {
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+.registerBox__login:hover, .registerBox__register:hover {
   background-color: black;
 }
 
-.registerBox__btnContainer__register {
-  margin-top: 20px;
-  width: 150px;
-  height: 40px;
-  border: 1px solid white;
-  background-color: transparent;
-  font-size: 16px;
-  cursor: pointer;
-  -webkit-transition: .2s;
-  transition: .2s;
-  height: 30px;
-}
-
-.registerBox__btnContainer__register:hover {
-  background-color: black;
+@media (min-width: 1024px) and (orientation: landscape) {
+  .registerBox__login, .registerBox__register {
+    width: 170px;
+    height: 40px;
+    font-size: 18px;
+  }
 }
 
 .registerBox__errorBox {
   opacity: 0;
   min-height: 105px;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
-.registerBox__errorBox__errMessage {
+.registerBox__errMessage {
   display: block;
   color: red;
   font-size: 12px;
@@ -469,18 +974,281 @@ main .opacity {
   margin-top: 10px;
 }
 
+@media (min-width: 720px) and (orientation: portrait) {
+  .registerBox__errMessage {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1240px) and (orientation: landscape) {
+  .registerBox__errMessage {
+    font-size: 14px;
+  }
+}
+
 .registerBox__errorBox--show {
   opacity: 1;
 }
 
-.footer {
-  background-color: black;
-  border-top: 1px solid white;
+@media (min-width: 720px) and (orientation: portrait) {
+  .registerBox {
+    min-height: 615px;
+  }
 }
 
-.footer p {
+@media (min-width: 1024px) and (orientation: landscape) {
+  .registerBox__description {
+    font-size: 36px;
+    margin-bottom: 55px;
+  }
+}
+
+.registerBox__btnContainer {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media (min-width: 720px) and (orientation: landscape) {
+  .registerBox__btnContainer {
+    margin-top: 20px;
+  }
+}
+
+.registerBox__inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (orientation: landscape) {
+  .registerBox__inputs {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 720px) and (orientation: landscape) {
+  .registerBox__inputs {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .registerBox__inputs {
+    font-size: 22px;
+  }
+}
+
+.registerBox__input {
+  margin-top: 0;
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .registerBox__input {
+    width: 250px;
+    margin-top: 10px;
+  }
+}
+
+@media (orientation: landscape) {
+  .registerBox__input {
+    width: 100px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .registerBox__input {
+    width: 150px;
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .registerBox__label {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 720px) and (orientation: landscape) {
+  .registerBox__label {
+    margin-left: 3vw;
+  }
+}
+
+.contact {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+}
+
+.contact__informations {
+  margin: 0 auto 10vh;
+}
+
+@media (orientation: landscape) {
+  .contact__informations {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+.contact__info {
+  font-family: 'PT Serif', 'serif';
+  font-weight: lighter;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px black;
+  margin-top: 2vh;
+}
+
+@media (orientation: landscape) {
+  .contact__info {
+    margin-left: 3vw;
+  }
+}
+
+.contact__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 15vh 0 0;
+}
+
+.contact__input {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid #cccccc;
+  margin: 1vh auto 1vh;
+  height: 4.5vh;
+  width: 70vw;
+  max-width: 800px;
+  font-size: 14px;
+}
+
+@media (orientation: landscape) {
+  .contact__input {
+    width: 60vw;
+    height: 8vh;
+  }
+}
+
+.contact__message {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid #cccccc;
+  height: 30vh;
+  width: 70vw;
+  max-width: 800px;
+  margin-top: 1vh;
+  font-size: 14px;
+  padding: 2vw;
+}
+
+@media (orientation: landscape) {
+  .contact__message {
+    width: 60vw;
+  }
+}
+
+.contact__btn {
+  margin-top: 20px;
+  width: 150px;
+  height: 40px;
+  border: 1px solid white;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+  height: 30px;
+  margin: 4vh auto 0;
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .contact__btn {
+    width: 200px;
+    height: 51px;
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: landscape) {
+  .contact__btn {
+    font-size: 20px;
+    border: 1.5px solid white;
+  }
+}
+
+.contact__btn:hover {
+  background-color: black;
+}
+
+.contact textarea:-webkit-autofill,
+.contact textarea:-webkit-autofill:hover,
+.contact textarea:-webkit-autofill:focus,
+.contact textarea:-internal-autofill-selected,
+.contact input:-webkit-autofill,
+.contact input:-webkit-autofill:hover,
+.contact input:-webkit-autofill:focus,
+.contact input:-internal-autofill-selected {
+  -webkit-text-fill-color: white;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@media (min-width: 720px) and (orientation: portrait) {
+  .contact input, .contact textarea, .contact__informations__info {
+    font-size: 20px;
+  }
+}
+
+.footer {
+  background-color: black;
+}
+
+.footer__txt {
   color: white;
   font-size: 10px;
-  line-height: 20px;
+  line-height: 5vh;
 }
 /*# sourceMappingURL=main.css.map */

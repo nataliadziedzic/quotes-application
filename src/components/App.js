@@ -9,7 +9,7 @@ import Login from './Login';
 import Registration from './Registration';
 import ToughTasks from './ToughTasks'
 import EasyTasks from './EasyTasks'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { HashRouter as Router, Route } from 'react-router-dom'
 import { useState } from 'react';
 
 function App() {
@@ -20,17 +20,17 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router basename="/">
       <div className="App">
         <header className='header'>{<Header />}</header>
         <main>
-          <Route path='/quotes-application/' exact render={() => <HomePage permission={permission} />} />
-          <Route path='/quotes-application/start' render={() => <Start permission={permission} />} />
-          <Route path='/quotes-application/login' render={() => <Login permission={permission} setPermission={setPermission} loginData={loginData} />} />
-          <Route path='/quotes-application/registration' render={() => <Registration loginData={loginData} />} />
-          <Route path='/quotes-application/contact' render={() => <Contact />} />
-          <Route path='/quotes-application/tough' render={() => <ToughTasks />} />
-          <Route path='/quotes-application/easy' render={() => <EasyTasks />} />
+          <Route path='/' exact render={() => <HomePage permission={permission} />} />
+          <Route path='/start' render={() => <Start permission={permission} />} />
+          <Route path='/login' render={() => <Login permission={permission} setPermission={setPermission} loginData={loginData} />} />
+          <Route path='/registration' render={() => <Registration loginData={loginData} />} />
+          <Route path='/contact' render={() => <Contact />} />
+          <Route path='/tough' render={() => <ToughTasks />} />
+          <Route path='/easy' render={() => <EasyTasks />} />
           <div className="opacity"></div>
         </main>
         <footer className='footer'>{< Footer />}</footer>

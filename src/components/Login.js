@@ -47,8 +47,8 @@ function Login(props) {
                 <input className="loginBox__input" type="password" name='password' value={pass} onChange={handleSetPass} />
             </div>
             <div className="loginBox__btnContainer">
-                <Link to={props.permission ? '/quotes-application/start' : '/quotes-application/login'}><button onClick={handleValidation} className="loginBox__login">Log in</button></Link>
-                <Link to='/quotes-application/registration'><button className="loginBox__login">Not regitered yet?</button></Link>
+                <Link to={props.permission ? '/start' : '/login'}><button onClick={handleValidation} className="loginBox__login">Log in</button></Link>
+                <Link to='/registration'><button className="loginBox__login">Not regitered yet?</button></Link>
             </div>
             <div className="loginBox__errorBox">
                 {!isUserCorrect && <span className='loginBox__errMessage'>{errors.usernameErr}</span>}
