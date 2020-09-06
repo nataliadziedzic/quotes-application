@@ -23,6 +23,8 @@ function ToughTask() {
         document.querySelector('.motivationBox__main').innerHTML = tasksNames[taskIndex]
         document.querySelector('.motivationBox__description').innerHTML = tasksInstructions[taskIndex]
         document.querySelector('.motivationBox__description').style.textAlign = 'center'
+        document.querySelector('.motivationBox__btn--disable').style.backgroundColor = 'black'
+        document.querySelector('.motivationBox__btn--disable').style.cursor = 'auto'
     }
 
     return (
@@ -34,7 +36,7 @@ function ToughTask() {
                 </div>
                 <div className="motivationBox__btnContainer">
                     <Link to="/start"><button className="motivationBox__btn">Change</button></Link>
-                    <button onClick={showTask} className="motivationBox__btn">Get task</button>
+                    <button onClick={showTask} className="motivationBox__btn motivationBox__btn--disable">Get task</button>
                 </div>
             </div>
         </div>
