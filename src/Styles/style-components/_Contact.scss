@@ -37,31 +37,44 @@
         border: 2px solid rgb(204, 204, 204);
         margin: 1vh auto 1vh;
         height: 4.5vh;
+        min-height: 25px;
         width: 70vw;
         max-width: 800px;
-        font-size: 14px;
+        font-size: 15px;
         @media(orientation: landscape) {
             width: 60vw;
             height: 8vh;
         }
     }
     &__message{
-        background-color: rgba(0,0,0,.3);
-        border: 2px solid rgb(204, 204, 204);
         height: 30vh;
-        width: 70vw;
-        max-width: 800px;
+        min-height: 100px;
         margin-top: 1vh;
-        font-size: 14px;
-        padding: 2vw;
-        @media(orientation: landscape) {
-            width: 60vw;
-        }        
+        padding: 2vw;      
     }
     &__btn{
         @include btn;
         height: 30px;
         margin: 4vh auto 0;
+    }
+    &__messageSucceed{
+        background-color: rgb(35,43,43);
+        height: 100px;
+        min-width: max-content;
+        line-height: 100px;
+        padding: 0 50px;
+        font-size: 17px;
+        border-radius: 5%;
+        margin: 0 auto;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        @media(min-width: 1024px) { 
+            font-size: 22px;
+        }
+
     }
     textarea:-webkit-autofill,
     textarea:-webkit-autofill:hover, 
@@ -73,10 +86,5 @@
     input:-internal-autofill-selected {
         -webkit-text-fill-color: white;
         transition: background-color 5000s ease-in-out 0s;
-    }
-    input, textarea, &__informations__info {
-        @media (min-width: 720px) and (orientation: portrait){
-            font-size: 20px;
-        }
     }
 }
