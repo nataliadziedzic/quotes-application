@@ -18,7 +18,8 @@ function Regiatration(props) {
     const handleSetEmail = e => {
         const emailInput = e.target.value
         setEmail(emailInput)
-        emailInput.indexOf('@') === -1 ? setIsEmailCorrect(false) : setIsEmailCorrect(true)
+        if (emailInput.indexOf('@') !== -1 && e.target.value.indexOf("@") !== 0 && e.target.value.indexOf("@") < (e.target.value.length - 1)) setIsEmailCorrect(true)
+        else setIsEmailCorrect(false)
     }
 
     const handleSetPass = e => {
@@ -41,7 +42,7 @@ function Regiatration(props) {
 
     const errors = {
         usernameErr: 'Username should be at least 2 signs long',
-        emailErr: 'e-mail should contain @',
+        emailErr: 'E-mail is not correct',
         passErr: 'Password cannot be shorter than 6 signs'
     }
 
