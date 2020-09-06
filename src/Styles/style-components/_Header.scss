@@ -18,27 +18,24 @@
     }
     &__hamburger{
       position: absolute;
-      right: 0;
-      margin-right: calc(10vw - 15px);
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
       z-index: 3;
       width: 30px;
       height: 30px;
       background-color: transparent;
       border: 2px solid rgb(255, 255, 255);
       cursor: pointer;
-      @media (orientation: landscape){
-        margin-right: calc(6vw - 15px)
-      }
-      @media (min-width: 720px) and (orientation: portrait) {
+      @media (min-width: 720px) and (min-height: 640px){
         width: 46px;
         height: 46px;
         font-size: 20px;
-        margin-right: calc(10vw - 23px);
       }
-      @media (min-width: 1024px) and (orientation: landscape){
-        margin-right: calc(6vw - 20px);
-        width: 40px;
-        height: 40px;
+      @media(orientation: landscape) {
+        right: 2%;
+      }
+      & .fa-times{
         font-size: 20px;
       }
     }
@@ -47,39 +44,44 @@
         top: 0;
         right: 0;
         z-index: 2;
-        background-color: rgba(7, 8, 10, .5);
         background-color: rgb(0,0,0);
         transition: .4s;
-        width: 20vw;
-        font-size: 16px;
-        @media (orientation: landscape){
-          width: 12vw;
-        }
+        width: 100%;
     }
     &__menuList{
-      text-align: center;
-      margin-top: 40px;
-      @media (min-width: 720px) and (orientation: portrait) {
-        margin-top: 75px;
-        font-size: 22px;
+      height: 100%;
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+      align-items: center;
+      margin-top: 15vh;
+      @media (orientation: portrait){
+        margin-top: 10vh;
       }
-      @media (min-width: 1024px) and (orientation: landscape){
-       margin-top: 80px;
-     }
    }
    &__item{
-    margin-top: 50px;
-    @media (min-width: 540px) and (orientation: landscape){
-      font-size: 15px;
-      margin-top: 30px;
+     font-size: 16px;
+     text-transform: uppercase;
+     width: 100%;
+    @media (min-width: 375px){
+      font-size: 18px;
     }
-    @media (min-width: 700px) and (orientation: landscape){
-      font-size: 17px;
-      margin-top: 35px;
+    @media (min-width: 768px) and (orientation: portrait), (min-width: 1024px) {
+      font-size: 28px;
     }
-    @media (min-width: 1024px) and (orientation: landscape){
-      font-size: 22px;
-      margin-top: 50px;
+    transition: .2s;
+    // Styles for menu item on hover.
+      & a{
+        transition: .2s;
+      }:hover{
+        font-size: 1.2em;
+        text-decoration: underline;
+        text-decoration-color: rgb(187, 127, 54);
+        text-decoration-thickness: 2px;
+      }
+    // Styles for active menu item. 
+    &--active {
+      font-size: 1.2em;
+      color: rgb(187, 127, 54);
     }
   }
   }

@@ -9,6 +9,7 @@
           box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   color: white;
+  outline: none;
 }
 
 html {
@@ -86,8 +87,10 @@ main .opacity {
 
 .header__hamburger {
   position: absolute;
-  right: 0;
-  margin-right: calc(10vw - 15px);
+  right: 5%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   z-index: 3;
   width: 30px;
   height: 30px;
@@ -96,28 +99,22 @@ main .opacity {
   cursor: pointer;
 }
 
-@media (orientation: landscape) {
-  .header__hamburger {
-    margin-right: calc(6vw - 15px);
-  }
-}
-
-@media (min-width: 720px) and (orientation: portrait) {
+@media (min-width: 720px) and (min-height: 640px) {
   .header__hamburger {
     width: 46px;
     height: 46px;
     font-size: 20px;
-    margin-right: calc(10vw - 23px);
   }
 }
 
-@media (min-width: 1024px) and (orientation: landscape) {
+@media (orientation: landscape) {
   .header__hamburger {
-    margin-right: calc(6vw - 20px);
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
+    right: 2%;
   }
+}
+
+.header__hamburger .fa-times {
+  font-size: 20px;
 }
 
 .header__menu {
@@ -125,61 +122,66 @@ main .opacity {
   top: 0;
   right: 0;
   z-index: 2;
-  background-color: rgba(7, 8, 10, 0.5);
   background-color: black;
   -webkit-transition: .4s;
   transition: .4s;
-  width: 20vw;
-  font-size: 16px;
-}
-
-@media (orientation: landscape) {
-  .header__menu {
-    width: 12vw;
-  }
+  width: 100%;
 }
 
 .header__menuList {
-  text-align: center;
-  margin-top: 40px;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[5];
+      grid-template-rows: repeat(5, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 15vh;
 }
 
-@media (min-width: 720px) and (orientation: portrait) {
+@media (orientation: portrait) {
   .header__menuList {
-    margin-top: 75px;
-    font-size: 22px;
-  }
-}
-
-@media (min-width: 1024px) and (orientation: landscape) {
-  .header__menuList {
-    margin-top: 80px;
+    margin-top: 10vh;
   }
 }
 
 .header__item {
-  margin-top: 50px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 100%;
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
-@media (min-width: 540px) and (orientation: landscape) {
+@media (min-width: 375px) {
   .header__item {
-    font-size: 15px;
-    margin-top: 30px;
+    font-size: 18px;
   }
 }
 
-@media (min-width: 700px) and (orientation: landscape) {
+@media (min-width: 768px) and (orientation: portrait), (min-width: 1024px) {
   .header__item {
-    font-size: 17px;
-    margin-top: 35px;
+    font-size: 28px;
   }
 }
 
-@media (min-width: 1024px) and (orientation: landscape) {
-  .header__item {
-    font-size: 22px;
-    margin-top: 50px;
-  }
+.header__item a {
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.header__item :hover {
+  font-size: 1.2em;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #bb7f36;
+          text-decoration-color: #bb7f36;
+  text-decoration-thickness: 2px;
+}
+
+.header__item--active {
+  font-size: 1.2em;
+  color: #bb7f36;
 }
 
 .home {
@@ -236,8 +238,8 @@ main .opacity {
 }
 
 .home__intro {
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin: 0 auto;
+  max-width: 900px;
   font-weight: lighter;
 }
 
@@ -302,6 +304,8 @@ main .opacity {
   .home__start, .home__next {
     font-size: 20px;
     border: 1.5px solid white;
+    width: 170px;
+    height: 40px;
   }
 }
 
@@ -408,6 +412,8 @@ main .opacity {
   .start__choice {
     font-size: 20px;
     border: 1.5px solid white;
+    width: 170px;
+    height: 40px;
   }
 }
 
@@ -587,6 +593,8 @@ main .opacity {
   .motivationBox__btn {
     font-size: 20px;
     border: 1.5px solid white;
+    width: 170px;
+    height: 40px;
   }
 }
 
@@ -710,7 +718,6 @@ main .opacity {
   background-color: transparent;
   border: none;
   border-bottom: 1.5px solid white;
-  outline: none;
 }
 
 @media (min-width: 720px) {
@@ -766,6 +773,8 @@ main .opacity {
   .loginBox__login, .loginBox__register {
     font-size: 20px;
     border: 1.5px solid white;
+    width: 170px;
+    height: 40px;
   }
 }
 
@@ -775,8 +784,6 @@ main .opacity {
 
 @media (min-width: 1024px) and (orientation: landscape) {
   .loginBox__login, .loginBox__register {
-    width: 170px;
-    height: 40px;
     font-size: 18px;
   }
 }
@@ -888,7 +895,6 @@ main .opacity {
   background-color: transparent;
   border: none;
   border-bottom: 1.5px solid white;
-  outline: none;
 }
 
 @media (min-width: 720px) {
@@ -944,6 +950,8 @@ main .opacity {
   .registerBox__login, .registerBox__register {
     font-size: 20px;
     border: 1.5px solid white;
+    width: 170px;
+    height: 40px;
   }
 }
 
@@ -953,8 +961,6 @@ main .opacity {
 
 @media (min-width: 1024px) and (orientation: landscape) {
   .registerBox__login, .registerBox__register {
-    width: 170px;
-    height: 40px;
     font-size: 18px;
   }
 }
@@ -1160,9 +1166,10 @@ main .opacity {
   border: 2px solid #cccccc;
   margin: 1vh auto 1vh;
   height: 4.5vh;
+  min-height: 25px;
   width: 70vw;
   max-width: 800px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 @media (orientation: landscape) {
@@ -1173,20 +1180,10 @@ main .opacity {
 }
 
 .contact__message {
-  background-color: rgba(0, 0, 0, 0.3);
-  border: 2px solid #cccccc;
   height: 30vh;
-  width: 70vw;
-  max-width: 800px;
+  min-height: 100px;
   margin-top: 1vh;
-  font-size: 14px;
   padding: 2vw;
-}
-
-@media (orientation: landscape) {
-  .contact__message {
-    width: 60vw;
-  }
 }
 
 .contact__btn {
@@ -1216,11 +1213,38 @@ main .opacity {
   .contact__btn {
     font-size: 20px;
     border: 1.5px solid white;
+    width: 170px;
+    height: 40px;
   }
 }
 
 .contact__btn:hover {
   background-color: black;
+}
+
+.contact__messageSucceed {
+  background-color: #232b2b;
+  height: 100px;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  line-height: 100px;
+  padding: 0 50px;
+  font-size: 17px;
+  border-radius: 5%;
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .contact__messageSucceed {
+    font-size: 22px;
+  }
 }
 
 .contact textarea:-webkit-autofill,
@@ -1234,12 +1258,6 @@ main .opacity {
   -webkit-text-fill-color: white;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
-}
-
-@media (min-width: 720px) and (orientation: portrait) {
-  .contact input, .contact textarea, .contact__informations__info {
-    font-size: 20px;
-  }
 }
 
 .footer {

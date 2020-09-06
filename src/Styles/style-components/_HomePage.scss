@@ -28,8 +28,8 @@
         }
         }
         &__intro {
-            margin-left: 10vw;
-            margin-right: 10vw;
+            margin: 0 auto;
+            max-width: 900px;
             font-weight: lighter;
             @media (min-width: 400px) and (orientation: portrait) {
                 font-size: 20px;

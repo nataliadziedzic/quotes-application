@@ -22,12 +22,10 @@ function Contact() {
                 div.style.display = "none"
             }, 1500)
         }
-
     }
     // Check if email is typed correctly - must include '@' and characters before and after it.
     const handleCheck = (e) => {
         emailIsCorrect = false
-        console.log(e.target.value.length)
         if (e.target.value.indexOf("@") !== -1 && e.target.value.indexOf("@") !== 0 && e.target.value.indexOf("@") < (e.target.value.length - 1)) {
             emailIsCorrect = true
         }
