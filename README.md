@@ -1,12 +1,17 @@
 # Quotes app
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
+Live demo: [Quotes app](https://nataliadziedzic.github.io/quotes-application/#/)
+
 ## How to use
 1. Application opens at home page, click "next" button until it changes to "start" - when you choose "start" from menu you will be redirected to login page as well as after clicking the "start" button.
-2. Click "Sign up" and fill in the fields according to the instructions.
+2. Click "Sign up" and fill in the fields according to the instructions. </br> </br>
 ![](https://raw.githubusercontent.com/nataliadziedzic/quotes-application/master/src/img/Registration.png)
-3. Use the selected username and password when returning to the login page.
+</br> </br>
+3. Use the selected username and password when returning to the login page. </br> </br>
+
 ![](https://raw.githubusercontent.com/nataliadziedzic/quotes-application/master/src/img/Login.png)
+</br> </br>
 4. Now you can choose one of the two options to draw a quote and a corresponding task - it will be randomly selected from one of the two set of tasks based on how you feel today.
 
 
