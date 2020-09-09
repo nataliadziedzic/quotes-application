@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom"
 import quotes from "../data/quotes.json"
+import { useSelector } from "react-redux";
 
-function ToughTask() {
-    const tasksNames = ["Bulgarian Split Squat", "Kang Squat", "Squat and Lunge", "Side-To-Side Squat Jump", "Assisted Reverse Side Situp", "Leg Raise and Reach Clap", "Lying Windshield Wipers", "Russian Twist", "Side-To-Side Crunch", "Plank With Hip Dip"]
-    const tasksInstructions = [
+
+function Tasks() {
+    const taskState = useSelector(state => state.taskReducer)
+
+    const toughTasksNames = ["Bulgarian Split Squat", "Kang Squat", "Squat and Lunge", "Side-To-Side Squat Jump", "Assisted Reverse Side Situp", "Leg Raise and Reach Clap", "Lying Windshield Wipers", "Russian Twist", "Side-To-Side Crunch", "Plank With Hip Dip"]
+    const toughTasksInstructions = [
         "Do the squat with the back leg elevated on a bench or a chair. Complete 10 reps on each side.",
         "Place your hands behind your head, move your torso forward as parallel to the floor as possible, bend your knees and get your torso more upright to transition into a squat position. Reverse the movement and try to complete 15 reps.",
         "Do a regular squat than take a large step forward with your left foot and lower down toward the ground allowing both legs to bend to approximately 90 degrees. Return to start. Compete 15 reps on each side",
@@ -16,6 +20,18 @@ function ToughTask() {
         "Lie on your back, bend your knees so that your feet are flat on the floor, arms by sides. Move your shoulder blades and head slightly off the ground and reach your right hand to your right foot, return to start and quickly repeat on the opposite side. Compete 15 reps on each side.",
         "Start in a low plank position with your body in a straight line, your elbows bent and under your shoulders and your feet hip-width apart. Move right hip to right side, but stop before it touch the floor. Reverse the movement and repeat on the left side. Compete 10 reps on each side.",
     ]
+    const easyTasksNames = ["Walk", "Meditation", "Visualization", "Yoga", "Stream of consciousness", "Gratefulness"]
+    const easyTasksInstructions = [
+        "Just try to go out for 30 minutes and relax. It will not only lighten your mood and improve your sleep but also strengthen your heart",
+        "Set your mindset for the next day, it'll boost your attention span and help you focus on the right things. Meditation improves self-awareness and self-esteem, lowers levels of stress and anxiety and helps you create a more positive outlook on life.",
+        "Sit in a comfortable position, close your eyes and imagine a scene in which you feel at peace, in as vivid detail as you can.  Let go of all tension",
+        "Find your favourite yoga tutorial on the internet and start today - if you didn't already. There are no excuses. The benefits of a regular yoga practice are incredible!",
+        "Sit down with a piece of paper and write out whatever is in your head. Overthinking is forbidden, don't choose your words. Do this especially when you feel overwhelmed or right after you wake up. Writing regularly gives us the opportunity to get our thoughts out without any fear of judgment from others. It's a way to understand what’s going on within, listen to inner voice, and strengthen intuition.",
+        "What 3 things are you grateful for? Think deeply about them and feel them. See how many things you have right here and right now."
+    ]
+    let tasksNames = taskState === 'tough' ? toughTasksNames : easyTasksNames;
+    let tasksInstructions = taskState === 'tough' ? toughTasksInstructions : easyTasksInstructions;
+
     const quoteIndex = Math.floor(Math.random() * quotes.length)
     const taskIndex = Math.floor(Math.random() * tasksNames.length)
 
@@ -43,4 +59,4 @@ function ToughTask() {
     );
 }
 
-export default ToughTask;
+export default Tasks;

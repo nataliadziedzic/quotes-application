@@ -3,6 +3,7 @@ function Contact() {
     let emailIsCorrect = false
     // Check if each field is completed
     const handleSend = (e) => {
+        e.preventDefault();
         let isAllCompleted = [];
         const userData = document.querySelectorAll(".contact__input");
         userData.forEach(input => {

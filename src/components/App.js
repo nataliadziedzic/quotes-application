@@ -7,8 +7,7 @@ import Contact from './Contact';
 import Footer from './Footer';
 import Login from './Login';
 import Registration from './Registration';
-import ToughTasks from './ToughTasks'
-import EasyTasks from './EasyTasks'
+import Tasks from './Tasks'
 import { HashRouter as Router, Route } from 'react-router-dom'
 import { useState } from 'react';
 
@@ -29,8 +28,7 @@ function App() {
           <Route path='/login' render={() => <Login permission={permission} setPermission={setPermission} loginData={loginData} />} />
           <Route path='/registration' render={() => <Registration loginData={loginData} />} />
           <Route path='/contact' render={() => <Contact />} />
-          <Route path='/tough' render={() => <ToughTasks />} />
-          <Route path='/easy' render={() => <EasyTasks />} />
+          <Route path='/tasks' render={() => <Tasks />} />
           <div className="opacity"></div>
         </main>
         <footer className='footer'>{< Footer />}</footer>
