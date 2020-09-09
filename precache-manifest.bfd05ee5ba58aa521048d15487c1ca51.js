@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e35f64c1a0c2c57419b09d09765042d1",
+    "revision": "c80dff52a8f8ac7ce9602ccd1ae13349",
     "url": "/quotes-application/index.html"
   },
   {
-    "revision": "b41b755758da3a1baefb",
-    "url": "/quotes-application/static/css/main.3a71672d.chunk.css"
+    "revision": "874b781f773c93a781a9",
+    "url": "/quotes-application/static/css/main.f05bd9bd.chunk.css"
   },
   {
-    "revision": "8ddf36f11bd8bea8173e",
-    "url": "/quotes-application/static/js/2.f9f1dccc.chunk.js"
+    "revision": "108ae5fd8568aef9eb1d",
+    "url": "/quotes-application/static/js/2.2c5af301.chunk.js"
   },
   {
     "revision": "f231859d6585c4cd5f80c344783ed269",
-    "url": "/quotes-application/static/js/2.f9f1dccc.chunk.js.LICENSE.txt"
+    "url": "/quotes-application/static/js/2.2c5af301.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b41b755758da3a1baefb",
-    "url": "/quotes-application/static/js/main.086a73fe.chunk.js"
+    "revision": "874b781f773c93a781a9",
+    "url": "/quotes-application/static/js/main.5a096a9a.chunk.js"
   },
   {
     "revision": "917dfb2e37b9871bbd40",
