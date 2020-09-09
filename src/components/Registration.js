@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
-function Regiatration(props) {
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setLoginData } from './redux/actions/index'
+function Regiatration() {
+    const dispatch = useDispatch()
     const [username, setUsername] = useState('');
     const [pass, setPass] = useState('');
     const [email, setEmail] = useState('');
@@ -30,8 +33,7 @@ function Regiatration(props) {
     const handleValidation = () => {
         if (isUserCorrect && isPassCorrect && isEmailCorrect) {
             setIsAllCorrect(true)
-            props.loginData.user = username
-            props.loginData.password = pass
+            dispatch(setLoginData(username, pass))
         }
         else {
             setIsAllCorrect(false)

@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from "react-redux";
+import { allowPermission, denyPermission } from "./redux/actions/index"
 
-function Login(props) {
+function Login() {
+    const dispatch = useDispatch()
+    const user = useSelector(state => state.userReducer.username)
+    const password = useSelector(state => state.userReducer.password)
+    const permission = useSelector(state => state.permissionReducer)
     const [username, setUsername] = useState('');
     const [pass, setPass] = useState('');
 
@@ -11,26 +17,28 @@ function Login(props) {
     const handleSetUsername = e => {
         const userInput = e.target.value
         setUsername(userInput)
-        userInput === props.loginData.user ? setIsUserCorrect(true) : setIsUserCorrect(false)
+        userInput === user ? setIsUserCorrect(true) : setIsUserCorrect(false)
     }
 
     const handleSetPass = e => {
         const passInput = e.target.value
         setPass(passInput);
-        passInput === props.loginData.password ? setIsPassCorrect(true) : setIsPassCorrect(false)
+        passInput === password ? setIsPassCorrect(true) : setIsPassCorrect(false)
     }
 
     const handleValidation = () => {
+        console.log(permission, user, password)
         if (username === '') { setIsUserCorrect(false) }
         if (pass === '') { setIsPassCorrect(false) }
         if (isUserCorrect && isPassCorrect) {
-            props.setPermission(true)
+            dispatch(allowPermission())
         }
         else {
-            props.setPermission(false)
+            dispatch(denyPermission())
         }
         document.querySelector('.loginBox__errorBox').classList.add('loginBox__errorBox--show')
     }
+    useEffect(handleValidation, [pass, username])
 
     const errors = {
         usernameErr: 'Incorrect username',
@@ -47,7 +55,7 @@ function Login(props) {
                 <input className="loginBox__input" type="password" name='password' value={pass} onChange={handleSetPass} />
             </div>
             <div className="loginBox__btnContainer">
-                <Link to={props.permission ? '/start' : '/login'}><button onClick={handleValidation} className="loginBox__login">Log in</button></Link>
+                <Link to={permission ? '/start' : '/login'}><button onClick={handleValidation} className="loginBox__login">Log in</button></Link>
                 <Link to='/registration'><button className="loginBox__login">Not regitered yet?</button></Link>
             </div>
             <div className="loginBox__errorBox">

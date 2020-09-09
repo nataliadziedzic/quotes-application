@@ -23,6 +23,7 @@ function Contact() {
                 div.style.display = "none"
             }, 1500)
         }
+        else alert("Please enter valid data")
     }
     // Check if email is typed correctly - must include '@' and characters before and after it.
     const handleCheck = (e) => {

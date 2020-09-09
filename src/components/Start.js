@@ -1,16 +1,16 @@
 import React from 'react';
 import { Route, Redirect, Link } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectToughTask, selectEasyTask } from "./redux/actions/index";
 
-function Start(props) {
-
+function Start() {
+    const permission = useSelector(state => state.permissionReducer)
     const dispatch = useDispatch()
 
 
     return (
         <Route render={() => (
-            props.permission ? (<div className="start">
+            permission ? (<div className="start">
                 <h1 className="start__welcome">Welcome!</h1>
                 <p className="start__question">How are you feeling today?</p>
                 <div className="start__btnContainer">
