@@ -5,7 +5,6 @@
   "homepage": "https://nataliadziedzic.github.io/quotes-application/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "dotenv": "^8.2.0",
     "node-sass": "^4.13.1",
@@ -23,10 +22,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "webos"
   },
   "browserslist": {
     "production": [
@@ -41,7 +42,16 @@
     ]
   },
   "devDependencies": {
-    "eslint-plugin-react-hooks": "^2.5.0",
-    "gh-pages": "^3.1.0"
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-wesbos": "^1.0.1",
+    "eslint-plugin-html": "^6.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "gh-pages": "^3.1.0",
+    "prettier": "^2.1.1"
   }
 }
