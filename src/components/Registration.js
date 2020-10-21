@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setLoginData } from '../redux/actions/index';
@@ -54,6 +54,10 @@ const Regiatration = () => {
     emailErr: 'E-mail is not correct',
     passErr: 'Password cannot be shorter than 6 signs',
   };
+  const usernameRef = useRef();
+  useEffect(() => {
+    usernameRef.current.focus();
+  }, []);
 
   return (
     <div className="registerBox">
@@ -63,6 +67,7 @@ const Regiatration = () => {
           Username:
         </label>
         <input
+          ref={usernameRef}
           className="registerBox__input"
           type="text"
           name="username"

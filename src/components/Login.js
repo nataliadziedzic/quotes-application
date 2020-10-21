@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-unused-expressions */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { allowPermission, denyPermission } from '../redux/actions/index';
@@ -50,6 +50,10 @@ const Login = () => {
     usernameErr: 'Incorrect username',
     passErr: 'Incorrect password',
   };
+  const loginRef = useRef();
+  useEffect(() => {
+    loginRef.current.focus();
+  }, []);
 
   return (
     <div className="loginBox">
@@ -57,6 +61,7 @@ const Login = () => {
       <div className="loginBox__inputs">
         <label htmlFor="username">Username:</label>
         <input
+          ref={loginRef}
           className="loginBox__input"
           type="text"
           name="username"
