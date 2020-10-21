@@ -1,3 +1,6 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable no-unused-expressions */
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -22,12 +25,9 @@ const Regiatration = () => {
   const handleSetEmail = (e) => {
     const emailInput = e.target.value;
     setEmail(emailInput);
-    if (
-      emailInput.indexOf('@') !== -1 &&
-      e.target.value.indexOf('@') !== 0 &&
-      e.target.value.indexOf('@') < e.target.value.length - 1
-    )
-      setIsEmailCorrect(true);
+    const re = new RegExp(/^[\w._-]+@([\w-]+\.)+[\w]{2,4}$/);
+    const validation = re.test(emailInput);
+    if (validation) setIsEmailCorrect(true);
     else setIsEmailCorrect(false);
   };
 
