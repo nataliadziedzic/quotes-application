@@ -9,7 +9,6 @@ import { allowPermission, denyPermission } from '../../../redux/actions/index';
 const Login = () => {
   const dispatch = useDispatch();
   const loginData = useSelector((state) => state.userReducer);
-  const permission = useSelector((state) => state.permissionReducer);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -21,7 +20,9 @@ const Login = () => {
     username === loginData.username
       ? setIsUserCorrect(true)
       : setIsUserCorrect(false);
-    password === loginData ? setIsPassCorrect(true) : setIsPassCorrect(false);
+    password === loginData.password
+      ? setIsPassCorrect(true)
+      : setIsPassCorrect(false);
   }, [username, password]);
 
   const handleValidation = () => {
@@ -69,15 +70,13 @@ const Login = () => {
         />
       </div>
       <div className="loginBox__btnContainer">
-        <Link to={permission ? '/start' : '/login'}>
-          <button
-            onClick={handleValidation}
-            className="loginBox__login"
-            type="submit"
-          >
-            Log in
-          </button>
-        </Link>
+        <button
+          onClick={handleValidation}
+          className="loginBox__login"
+          type="submit"
+        >
+          Log in
+        </button>
         <Link to="/registration">
           <button type="button" className="loginBox__login">
             Not regitered yet?
