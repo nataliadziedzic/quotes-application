@@ -8,43 +8,33 @@ import { allowPermission, denyPermission } from '../../../redux/actions/index';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.userReducer.username);
-  const password = useSelector((state) => state.userReducer.password);
+  const loginData = useSelector((state) => state.userReducer);
   const permission = useSelector((state) => state.permissionReducer);
   const [username, setUsername] = useState('');
-  const [pass, setPass] = useState('');
+  const [password, setPassword] = useState('');
 
   const [isUserCorrect, setIsUserCorrect] = useState(false);
   const [isPassCorrect, setIsPassCorrect] = useState(false);
+  const [error, setError] = useState(false);
 
-  const handleSetUsername = (e) => {
-    const userInput = e.target.value;
-    setUsername(userInput);
-    userInput === user ? setIsUserCorrect(true) : setIsUserCorrect(false);
-  };
-
-  const handleSetPass = (e) => {
-    const passInput = e.target.value;
-    setPass(passInput);
-    passInput === password ? setIsPassCorrect(true) : setIsPassCorrect(false);
-  };
+  useEffect(() => {
+    username === loginData.username
+      ? setIsUserCorrect(true)
+      : setIsUserCorrect(false);
+    password === loginData ? setIsPassCorrect(true) : setIsPassCorrect(false);
+  }, [username, password]);
 
   const handleValidation = () => {
-    setIsUserCorrect(true);
-    setIsPassCorrect(true);
-    if (username.length === 0 || pass.length === 0) {
+    if (username.length === 0 || password.length === 0) {
       username.length === 0 ? setIsUserCorrect(false) : setIsPassCorrect(false);
     }
     if (isUserCorrect && isPassCorrect) {
       dispatch(allowPermission());
     } else {
       dispatch(denyPermission());
+      setError(true);
     }
-    // document
-    //   .querySelector('.loginBox__errorBox')
-    //   .classList.add('loginBox__errorBox--show');
   };
-  useEffect(handleValidation, [pass, username]);
 
   const errors = {
     usernameErr: 'Incorrect username',
@@ -66,7 +56,7 @@ const Login = () => {
           type="text"
           name="username"
           value={username}
-          onChange={handleSetUsername}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <br />
         <label htmlFor="password">Password:</label>
@@ -74,8 +64,8 @@ const Login = () => {
           className="loginBox__input"
           type="password"
           name="password"
-          value={pass}
-          onChange={handleSetPass}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <div className="loginBox__btnContainer">
@@ -95,11 +85,15 @@ const Login = () => {
         </Link>
       </div>
       <div className="loginBox__errorBox">
-        {!isUserCorrect && (
-          <span className="loginBox__errMessage">{errors.usernameErr}</span>
-        )}
-        {!isPassCorrect && (
-          <span className="loginBox__errMessage">{errors.passErr}</span>
+        {error && (
+          <>
+            {!isUserCorrect && (
+              <span className="loginBox__errMessage">{errors.usernameErr}</span>
+            )}
+            {!isPassCorrect && (
+              <span className="loginBox__errMessage">{errors.passErr}</span>
+            )}
+          </>
         )}
       </div>
     </div>

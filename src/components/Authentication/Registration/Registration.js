@@ -100,7 +100,6 @@ const Regiatration = () => {
       </div>
       <div className="registerBox__btnContainer">
         <Link to={isAllCorrect ? '/start' : '/registration'}>
-          {' '}
           <button onClick={handleValidation} className="loginBox__register">
             Sign up
           </button>

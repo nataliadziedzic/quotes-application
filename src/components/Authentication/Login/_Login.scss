@@ -1,21 +1,21 @@
-.loginBox{
-    margin-top: 15vh;
-    @media (max-height: 570px) and (orientation: portrait) {
-        margin-top: 40px;
+.loginBox {
+  margin-top: 15vh;
+  @media (max-height: 570px) and (orientation: portrait) {
+    margin-top: 40px;
+  }
+  @media (max-height: 320px) and (orientation: landscape) {
+    margin-top: 60px;
+  }
+  &__errMessage {
+    height: 24px;
+  }
+  &__errorBox {
+    @media (max-width: 800px) and (orientation: landscape) {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
     }
-    @media (max-height: 320px) and (orientation: landscape) {
-        margin-top: 60px;
-    }
-    &__errMessage{
-        height: 24px;
-    }
-    &__errorBox--show{
-        @media (max-width: 800px) and (orientation: landscape) {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-    }
-    @include form;
-    @include errorBox;
+  }
+  @include form;
+  @include errorBox;
 }
