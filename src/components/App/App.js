@@ -1,14 +1,14 @@
 import React from 'react';
-import '../styles/style-components/main.scss';
 import { HashRouter as Router, Route } from 'react-router-dom';
-import Header from './Header';
-import HomePage from './HomePage';
-import Start from './Start';
-import Contact from './Contact';
-import Footer from './Footer';
-import Login from './Login';
-import Registration from './Registration';
-import Tasks from './Tasks';
+import '../../styles/main/main.scss';
+import Header from '../Header/Header';
+import HomePage from '../Home/Home';
+import Start from '../Start/Start';
+import Contact from '../Contact/Contact';
+import Footer from '../Footer/Footer';
+import Login from '../Authentication/Login/Login';
+import Registration from '../Authentication/Registration/Registration';
+import Tasks from '../Tasks/Tasks';
 
 const App = () => (
   <Router basename="/">

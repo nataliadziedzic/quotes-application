@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectToughTask, selectEasyTask } from '../redux/actions/index';
+import { selectToughTask, selectEasyTask } from '../../redux/actions/index';
 
 const Start = () => {
   const permission = useSelector((state) => state.permissionReducer);

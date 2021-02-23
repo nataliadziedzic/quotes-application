@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-unused-expressions */
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { allowPermission, denyPermission } from '../redux/actions/index';
+import { allowPermission, denyPermission } from '../../../redux/actions/index';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -29,20 +30,19 @@ const Login = () => {
   };
 
   const handleValidation = () => {
-    if (username === '') {
-      setIsUserCorrect(false);
-    }
-    if (pass === '') {
-      setIsPassCorrect(false);
+    setIsUserCorrect(true);
+    setIsPassCorrect(true);
+    if (username.length === 0 || pass.length === 0) {
+      username.length === 0 ? setIsUserCorrect(false) : setIsPassCorrect(false);
     }
     if (isUserCorrect && isPassCorrect) {
       dispatch(allowPermission());
     } else {
       dispatch(denyPermission());
     }
-    document
-      .querySelector('.loginBox__errorBox')
-      .classList.add('loginBox__errorBox--show');
+    // document
+    //   .querySelector('.loginBox__errorBox')
+    //   .classList.add('loginBox__errorBox--show');
   };
   useEffect(handleValidation, [pass, username]);
 

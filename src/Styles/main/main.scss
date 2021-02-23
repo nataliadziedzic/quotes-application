@@ -1,0 +1,14 @@
+@import "../mixins/_btn.scss";
+@import "../mixins/_btnCenter.scss";
+@import "../mixins/_validationForm.scss";
+@import "../mixins/_errorBox.scss";
+@import "../mixins/_pagesPosition.scss";
+@import "./_base";
+@import "../../components/Header/Header";
+@import "../../components/Home/Home";
+@import "../../components/Start/Start";
+@import "../../components/Tasks/Tasks";
+@import "../../components/Authentication/Login/Login";
+@import "../../components/Authentication/Registration/Registration";
+@import "../../components/Contact/Contact";
+@import "../../components/Footer/Footer";
