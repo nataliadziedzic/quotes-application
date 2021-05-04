@@ -17,9 +17,7 @@ const App = () => {
   return (
     <Router basename="/">
       <div className="App">
-        <header className="header">
-          <Header />
-        </header>
+        <Header />
         <main>
           <Route path="/" exact render={() => <HomePage />} />
           <Route path="/start" render={() => <Start />} />
@@ -32,9 +30,7 @@ const App = () => {
           <Route path="/tasks" render={() => <Tasks />} />
           <div className="opacity" />
         </main>
-        <footer className="footer">
-          <Footer />
-        </footer>
+        <Footer />
       </div>
     </Router>
   );

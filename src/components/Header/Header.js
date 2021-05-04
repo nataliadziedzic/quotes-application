@@ -19,7 +19,7 @@ const Header = () => {
     }
   };
   return (
-    <>
+    <header className="header">
       <h1 className="header__logo">My motivation</h1>
       <button
         type="button"
@@ -69,7 +69,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-    </>
+    </header>
   );
 };
 

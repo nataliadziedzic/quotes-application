@@ -69,7 +69,6 @@
       font-size: 28px;
     }
     transition: .2s;
-    // Styles for menu item on hover.
       & a{
         transition: .2s;
       }:hover{
@@ -78,7 +77,6 @@
         text-decoration-color: rgb(187, 127, 54);
         text-decoration-thickness: 2px;
       }
-    // Styles for active menu item. 
     &--active {
       font-size: 1.2em;
       color: rgb(187, 127, 54);
