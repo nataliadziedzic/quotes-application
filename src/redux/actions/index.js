@@ -1,19 +1,21 @@
+import * as type from './types';
+
 export const selectToughTask = () => ({
-  type: 'SELECT_TOUGH',
+  type: type.SELECT_TOUGH,
 });
 export const selectEasyTask = () => ({
-  type: 'SELECT_EASY',
+  type: type.SELECT_EASY,
 });
 export const setLoginData = (username, password) => ({
-  type: 'LOGIN',
+  type: type.LOGIN,
   payload: {
     username,
     password,
   },
 });
 export const allowPermission = () => ({
-  type: 'PERMISSION_ALLOWED',
+  type: type.PERMISSION_ALLOWED,
 });
 export const denyPermission = () => ({
-  type: 'PERMISSION_DENIED',
+  type: type.PERMISSION_DENIED,
 });

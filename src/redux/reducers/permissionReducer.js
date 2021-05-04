@@ -1,9 +1,11 @@
+import * as type from '../actions/types';
+
 const permissionReducer = (state = false, action) => {
   switch (action.type) {
-    case 'PERMISSION_ALLOWED':
-      return (state = true);
-    case 'PERMISSION_DENIED':
-      return (state = false);
+    case type.PERMISSION_ALLOWED:
+      return true;
+    case type.PERMISSION_DENIED:
+      return false;
     default:
       return state;
   }
