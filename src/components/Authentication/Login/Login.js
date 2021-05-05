@@ -1,50 +1,48 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable no-unused-expressions */
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { allowPermission, denyPermission } from '../../../redux/actions/index';
+import { useAuthenticationContext } from '../../../context/AuthenticationContext';
+import { errors } from '../../../variables';
 
 const Login = () => {
   const dispatch = useDispatch();
+  const authenticationContext = useAuthenticationContext();
+  const {
+    username,
+    setUsername,
+    setPassword,
+    password,
+  } = authenticationContext ? authenticationContext : {};
   const loginData = useSelector((state) => state.userReducer);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const [isUserCorrect, setIsUserCorrect] = useState(false);
-  const [isPassCorrect, setIsPassCorrect] = useState(false);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    username === loginData.username
-      ? setIsUserCorrect(true)
-      : setIsUserCorrect(false);
-    password === loginData.password
-      ? setIsPassCorrect(true)
-      : setIsPassCorrect(false);
-  }, [username, password]);
-
-  const handleValidation = () => {
-    if (username.length === 0 || password.length === 0) {
-      username.length === 0 ? setIsUserCorrect(false) : setIsPassCorrect(false);
-    }
-    if (isUserCorrect && isPassCorrect) {
-      dispatch(allowPermission());
-    } else {
-      dispatch(denyPermission());
-      setError(true);
-    }
-  };
-
-  const errors = {
-    usernameErr: 'Incorrect username',
-    passErr: 'Incorrect password',
-  };
+  const [isUserDataValid, setIsUserDataValid] = useState(false);
+  const [error, setError] = useState(null);
   const loginRef = useRef();
+
   useEffect(() => {
     loginRef.current.focus();
   }, []);
+
+  useEffect(() => {
+    if(authenticationContext) {
+      username === loginData.username && password === loginData.password 
+        ? setIsUserDataValid(true) 
+        : setIsUserDataValid(false);
+    }
+  }, [username, password, loginData]);
+
+  const handleValidation = () => {
+    if (username.length === 0 || password.length === 0) {
+      setError(errors.emptyFieldError)
+     return setIsUserDataValid(false);
+    }
+    if (isUserDataValid) {
+      dispatch(allowPermission());
+    } else {
+      dispatch(denyPermission());
+      setError(errors.loginError);
+    }
+  };
 
   return (
     <div className="loginBox">
@@ -53,6 +51,7 @@ const Login = () => {
         <label htmlFor="username">Username:</label>
         <input
           ref={loginRef}
+          id="username"
           className="loginBox__input"
           type="text"
           name="username"
@@ -63,6 +62,7 @@ const Login = () => {
         <label htmlFor="password">Password:</label>
         <input
           className="loginBox__input"
+          id="password"
           type="password"
           name="password"
           value={password}
@@ -84,16 +84,7 @@ const Login = () => {
         </Link>
       </div>
       <div className="loginBox__errorBox">
-        {error && (
-          <>
-            {!isUserCorrect && (
-              <span className="loginBox__errMessage">{errors.usernameErr}</span>
-            )}
-            {!isPassCorrect && (
-              <span className="loginBox__errMessage">{errors.passErr}</span>
-            )}
-          </>
-        )}
+        {error && <span className="loginBox__errMessage">{error}</span>}
       </div>
     </div>
   );

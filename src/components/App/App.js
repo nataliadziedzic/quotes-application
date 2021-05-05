@@ -10,6 +10,7 @@ import Footer from '../Footer/Footer';
 import Login from '../Authentication/Login/Login';
 import Registration from '../Authentication/Registration/Registration';
 import Tasks from '../Tasks/Tasks';
+import AuthenticationContextProvider from '../../context/AuthenticationContext';
 
 const App = () => {
   const authed = useSelector((state) => state.permissionReducer);
@@ -24,8 +25,10 @@ const App = () => {
           <Route exact path="/login">
             {authed ? <Redirect to="/start" /> : <Login />}
           </Route>
-          <Route path="/login" render={() => <Login />} />
-          <Route path="/registration" render={() => <Registration />} />
+          <AuthenticationContextProvider>
+            <Route path="/login" render={() => <Login />} />
+            <Route path="/registration" render={() => <Registration />} />
+          </AuthenticationContextProvider>
           <Route path="/contact" render={() => <Contact />} />
           <Route path="/tasks" render={() => <Tasks />} />
           <div className="opacity" />
