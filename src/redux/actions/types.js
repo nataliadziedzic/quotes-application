@@ -1,5 +1,5 @@
 export const SELECT_TOUGH = 'SELECT_TOUGH';
 export const SELECT_EASY = 'SELECT_EASY';
-export const LOGIN = 'LOGIN';
+export const SET_LOGIN_DATA = 'SET_LOGIN_DATA';
 export const PERMISSION_ALLOWED = 'PERMISSION_ALLOWED';
 export const PERMISSION_DENIED = 'PERMISSION_DENIED';

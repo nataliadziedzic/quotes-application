@@ -7,7 +7,7 @@ export const selectEasyTask = () => ({
   type: type.SELECT_EASY,
 });
 export const setLoginData = (username, password) => ({
-  type: type.LOGIN,
+  type: type.SET_LOGIN_DATA,
   payload: {
     username,
     password,
