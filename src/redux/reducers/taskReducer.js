@@ -1,6 +1,6 @@
 import * as type from '../actions/types';
 
-const taskReducer = (state = '', action) => {
+const taskReducer = (state = null, action) => {
   switch (action.type) {
     case type.SELECT_TOUGH:
       return 'tough';

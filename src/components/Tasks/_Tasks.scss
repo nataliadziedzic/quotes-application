@@ -1,87 +1,96 @@
 .motivationBox {
-    height: 100%;
-    background-color: rgba(0, 0, 0, .2); 
-    &__textBox{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: rgb(0,0,0);
-        border: 4px solid rgb(139,69,19);
-        min-height: 45vh;
-        width: 90%;
-        max-width: 700px;
-        @media (orientation: landscape) {
-            width: 60%;
-            min-height: 70vh;
-        }
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  &__textBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0);
+    border: 4px solid rgb(139, 69, 19);
+    min-height: 45vh;
+    width: 90%;
+    max-width: 700px;
+    @media (orientation: landscape) {
+      width: 60%;
+      min-height: 70vh;
     }
-    &__description, &__main {
-        font-family: 'Philosopher', sans-serif;
-        font-weight: lighter;
-        margin: 10% 5% 2%;
-        @media (orientation: landscape) {
-           margin-top: 5%;
-       }
-       @media (min-width: 1024px) and (orientation: landscape) {
-           margin-top: 10%;
-       }
-}
+  }
+  &__description,
+  &__main {
+    font-family: 'Philosopher', sans-serif;
+    font-weight: lighter;
+    margin: 10% 5% 2%;
+    @media (orientation: landscape) {
+      margin-top: 5%;
+    }
+    @media (min-width: 1024px) and (orientation: landscape) {
+      margin-top: 10%;
+    }
+  }
 
-      &__main {
-         font-size: 19px;
-         @media (min-width: 720px) and (orientation: portrait) {
-            font-size: 28px;
-         }
-         @media (min-width: 1024px) and (orientation: landscape) {
-            font-size: 27px;
-        }
-
-}
-      &__descriptionWrapper{
-        max-height: 110px;
-        overflow: auto;
-        margin: 5%;
-        @media (min-width: 720px) and (orientation: portrait) {
-            max-height: 150px;
-        }
-        @media (min-width: 1024px) and (orientation: landscape) {
-         max-height: 250px;   
-        }
-        @media (min-height: 800px) and (orientation: portrait) {
-            max-height: 180px;
-        }
-      }
-      &__description{
-         text-align: right;
-         margin-top: 15px;
-         font-size: 17px;
-         @media (min-width: 720px) and (orientation: portrait) {
-            font-size: 25px;
-         }
-         @media (min-width: 1024px) and (orientation: landscape) {
-            font-size: 24px;
-        }
-}
-      &__btnContainer{
-        display: flex;
-        position: absolute;
-        bottom: 10%;
-        width: 100%;
-        justify-content: space-around;
-}
-&__btn {
+  &__main {
+    font-size: 19px;
+    @media (min-width: 720px) and (orientation: portrait) {
+      font-size: 28px;
+    }
+    @media (min-width: 1024px) and (orientation: landscape) {
+      font-size: 27px;
+    }
+  }
+  &__descriptionWrapper {
+    max-height: 110px;
+    overflow: auto;
+    margin: 5%;
+    @media (min-width: 720px) and (orientation: portrait) {
+      max-height: 150px;
+    }
+    @media (min-width: 1024px) and (orientation: landscape) {
+      max-height: 250px;
+    }
+    @media (min-height: 800px) and (orientation: portrait) {
+      max-height: 180px;
+    }
+  }
+  &__descriptionWrapper--center {
+    text-align: center;
+  }
+  &__description {
+    text-align: right;
+    margin-top: 15px;
+    font-size: 17px;
+    @media (min-width: 720px) and (orientation: portrait) {
+      font-size: 25px;
+    }
+    @media (min-width: 1024px) and (orientation: landscape) {
+      font-size: 24px;
+    }
+  }
+  &__btnContainer {
+    display: flex;
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    justify-content: space-around;
+  }
+  &__btn {
     @include btn;
     width: 120px;
     height: 30px;
     background-color: rgb(160, 80, 23);
-    &:hover{
+    &:hover {
       background-color: rgb(134, 66, 18);
-  }
-  @media (min-width: 1024px) and (orientation: landscape) {
+    }
+    @media (min-width: 1024px) and (orientation: landscape) {
       width: 160px;
       height: 45px;
+    }
+  }
+  &__btn--disable {
+    background-color: rgb(0, 0, 0);
+    cursor: auto;
+    &:hover {
+      background-color: rgb(0, 0, 0);
+    }
   }
 }
-    }
-    
